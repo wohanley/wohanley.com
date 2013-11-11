@@ -1,0 +1,66 @@
+//
+// IMPORTS
+//
+@import "compass/css3/shared";
+
+//
+// VARIABLES
+//
+
+// COLORS
+$bg-d: #222222;
+$bg: #272727;
+$sbg: #1a1a1a;
+$sbg-l: #1f1f1f;
+$fg-d: #a6a6a6;
+$fg: #d9d9d9;
+$fg-l: white;
+$hlt: #a6ca48;
+$hlt-l: #e6db74;
+$pygments-fg: #f8f8f2;
+
+// DIMENSIONS
+$sidebar: 300px;
+$spacer: 18px;
+$offset: $sidebar + $spacer * 3;
+
+//
+// MIXINS
+//
+
+// CLEAR FIX
+@mixin clearfix {
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// VENDOR PREFIXES
+@mixin border-radius($radius, $corner: false) {
+  @if $corner {
+    @include experimental(border-#{$corner}-radius, $radius, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+  }
+  @else {
+    @include experimental(border-radius, $radius, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+  }
+}
+
+@mixin box-shadow($one, $two: false, $three: false, $four: false, $five: false) {
+  $shadows: compact($one, $two, $three, $four, $five);
+  @include experimental(box-shadow, $shadows, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+}
+
+@mixin opacity($opacity) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity} * 100)";
+  filter: alpha(opacity=#{$opacity} * 100);
+  opacity: $opacity;
+}
+
+@mixin transition($one, $two: false, $three: false, $four: false, $five: false) {
+  $transitions: compact($one, $two, $three, $four, $five);
+  @include experimental(transition, $transitions, -moz, -webkit, -o, -ms, not -khtml, official);
+}

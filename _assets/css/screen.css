@@ -89,7 +89,7 @@ ol > li {
   counter-increment: item;
 }
 ol > li:before {
-  content: counter(item, decimal) ".";
+  content: counter(item,decimal) ".";
 }
 ul > li:before {
   content: "\2022";
@@ -188,18 +188,13 @@ a > img {
   background-color: #1f1f1f;
 }
 
-#container {
-  margin-top: 18px;
-  width: 960px;
-}
-
 #sidebar {
   position: fixed;
   top: 0px;
   bottom: 0px;
   left: 0px;
   padding: 0px 18px 0px 18px;
-  width: 255px;
+  width: 300px;
 }
 
 #header {
@@ -211,21 +206,19 @@ a > img {
   bottom: 0px;
   left: 0px;
   padding: 0px 18px 0px 18px;
-  width: 255px;
+  width: 300px;
 }
 
 #breadcrumbs {
   position: fixed;
   top: 18px;
-  left: 309px;
+  left: 354px;
   margin: 0px;
   padding: 9px;
-  width: 633px;
 }
 
 #content {
-  margin: 18px 0px 18px 309px;
-  width: 651px;
+  margin: 18px 18px 18px 354px;
 }
 #breadcrumbs + #content {
   margin-top: 72px;
