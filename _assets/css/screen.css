@@ -201,22 +201,6 @@ a > img {
   margin: 18px 0px 18px 0px;
 }
 
-#footer {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  padding: 0px 18px 0px 18px;
-  width: 300px;
-}
-
-#breadcrumbs {
-  position: fixed;
-  top: 18px;
-  left: 354px;
-  margin: 0px;
-  padding: 9px;
-}
-
 #content {
   margin: 18px 18px 18px 354px;
 }
@@ -239,7 +223,7 @@ a > img {
 
 #header > h1 {
   font-family: "Ubuntu Mono", sans-serif;
-  font-size: 36px;
+  font-size: 30px;
 }
 #header > h2 {
   color: #a6a6a6;
@@ -256,6 +240,12 @@ a > img {
 }
 #header a:hover {
   color: #a6ca48;
+}
+
+#primary-avatar {
+  width: 60px;
+  float: left;
+  margin-right: 10px;
 }
 
 .module {

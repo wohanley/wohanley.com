@@ -225,22 +225,6 @@ img {
   margin: $spacer 0px $spacer 0px;
 }
 
-#footer {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  padding: 0px $spacer 0px $spacer;
-  width: $sidebar;
-}
-
-#breadcrumbs {
-  position: fixed;
-  top: 18px;
-  left: $offset;
-  margin: 0px;
-  padding: 9px;
-}
-
 #content {
   margin: $spacer $spacer $spacer $offset;
   #breadcrumbs + & {
@@ -270,7 +254,7 @@ img {
   & > h1 {
     font: {
       family: "Ubuntu Mono", sans-serif;
-      size: 36px;
+      size: 30px;
     };
   }
   & > h2 {
@@ -285,6 +269,12 @@ img {
       color: $hlt;
     }
   }
+}
+
+#primary-avatar {
+    width: 60px;
+    float: left;
+    margin-right: 10px;
 }
 
 .module {
