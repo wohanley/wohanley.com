@@ -1,17 +1,38 @@
 {% extends 'layout.html' %}
 
-
-{% block breadcrumbs %}
-    <ul id="breadcrumbs">
-        <li>Blog</li>
-    </ul>
-{% endblock %}
+{% macro resumeItem(title, date, description, image, imageAlt, imageTitle) -%}
+    <div class="row">
+        <div class="resume-image col-xs-4 col-s-3 col-md-3">
+            <img src="{{ image }}" alt="{{ imageAlt }}" title="{{ imageTitle }}" />
+        </div>
+        <div class="col-xs-8 col-s-9 col-md-9">
+            <h2>{{ title }} <small class="pull-right">{{ date }}</small></h2>
+            <p>{{ description }}</p>
+        </div>
+    </div>
+{% endmacro -%}
 
 {% block content %}
-    {% for post in posts %}
-        <div class="item-header item-header-posts">
-            <h1><a href={{ get_url(post.url) }}>{{ post.title }}</a></h1>
-            <h2>{{ post.date }}{% if post.tags %} <span>&raquo;</span> {% for tag in post.tags %}<a href="{{ get_url(tags[tag].url) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</h2>
-        </div>
-    {% endfor %}
+    <div class="jumbotron push-down">
+        <p>I'm a UPEI student, software developer and frozen pizza enthusiast. I'm especially interested in education, free software, and location independent work, but if you're part of any interesting project or company, I'd love to see it.</p>
+    </div>
+    <h1>Skills and Technologies</h1>
+    <ul>
+        <li>Java and C# (particularly ASP.NET MVC)</li>
+        <li>Web technologies: jQuery, HTML/CSS, AJAX, JSON, Azure, SOAP</li>
+        <li>Scrum and agile development</li>
+        <li>Linux systems, including daily usage</li>
+        <li>SQL Server and Entity Framework</li>
+        <li>Working knowledge of Python and C++</li>
+    </ul>
+    <h1>Work</h1>
+    {{ resumeItem("Developer, Adeptio", "May 2012 to October 2013", "Developed Adeptio, an ASP.NET MVC3 web application, in a Scrum environment. Adeptio is an achievement planning application including goal setting, habit tracking, and Google Calendar and Microsoft Exchange integration.", get_asset('images/adeptio.png'), "Adeptio logo", "Adeptio") }}
+    {{ resumeItem("Research Assistant, UPEI", "May 2011 to September 2011", "Worked on an Android application applying wireless sensor network technology to medical devices. The application enabled doctors, nurses and other medical staff to monitor their patients wirelessly from an Android device, taking readings like blood pressure, pulse, and oximetry.", get_asset('images/upei-crest.png'), "UPEI logo", "UPEI") }}
+    <h1>Education</h1>
+    {{ resumeItem("UPEI", "September 2010 to present", "Home base for my degree. GPA: 4.3", get_asset('images/upei-crest.png'), "UPEI logo", "UPEI") }}
+    {{ resumeItem("Ithaca College", "September 2011 to December 2011", "Exchange semester as a Killam Fellow. Learned so much and had an absolute blast. GPA: 4.0", get_asset('images/ic-logo.jpg'), "Ithaca College logo", "Ithaca College") }}
+    {{ resumeItem("Dalhousie", "September 2009 to May 2010", "First year in the Dalhousie Integrated Science Program (DISP). Covered the major sciences: chemistry, biology, psychology, etc. GPA: 4.0", get_asset('images/dalhousie-logo.jpg'), "Dalhousie logo", "Dalhousie") }}
+    <h1>Awards</h1>
+    {{ resumeItem("Wayne Cutcliffe Award", "March 2013", "$500 bursary awarded in recognition of academic and work term success as part of UPEI's co-operative education program.", get_asset('images/upei-crest.png'), "UPEI logo", "UPEI") }}
+    {{ resumeItem("Killam Fellowship", "September 2011", "$5000 award from Fulbright Canada to study abroad in the USA for a semester.", get_asset('images/fulbright-canada.png'), "Fulbright Canada logo", "Fulbright Canada") }}
 {% endblock %}

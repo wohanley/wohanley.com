@@ -6,11 +6,10 @@
 }
 
 body {
-  background-color: #272727;
-  background-image: url("../images/bg.png");
+  background-color: #eeeeee;
   background-position: left top;
   background-repeat: repeat;
-  color: #d9d9d9;
+  color: #181818;
   font-family: "Ubuntu", sans-serif;
   font-size: 13px;
 }
@@ -22,7 +21,7 @@ blockquote, dl, ol, p, pre, table, ul {
 blockquote {
   overflow: hidden;
   padding: 0px 18px 0px 18px;
-  background-color: #1f1f1f;
+  background-color: #eeeeee;
 }
 
 dd, dt {
@@ -44,7 +43,7 @@ dl.horizontal > dt {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: white;
+  color: #282828;
   font-style: italic;
   font-weight: normal;
   line-height: 18px;
@@ -83,7 +82,7 @@ li {
 }
 ol > li:before, ul > li:before {
   padding-right: 8px;
-  color: #e6db74;
+  color: #186b4e;
 }
 ol > li {
   counter-increment: item;
@@ -119,13 +118,13 @@ p {
 
 pre {
   padding: 0px 3px 0px 3px;
-  background-color: #1f1f1f;
+  background-color: #eeeeee;
   font-family: "Envy Code R", "Ubuntu Mono", monospace;
   line-height: 18px;
 }
 
 table {
-  background-color: #1f1f1f;
+  background-color: #eeeeee;
   border-collapse: collapse;
 }
 
@@ -141,19 +140,19 @@ td > :last-child {
   margin-bottom: 0px;
 }
 tr:nth-child(2n) > td {
-  background-color: #222222;
+  background-color: #cccccc;
 }
 
 th {
-  background-color: #1a1a1a;
-  color: #e6db74;
+  background-color: #c3a14a;
+  color: #186b4e;
   font-style: italic;
   font-weight: normal;
   text-align: left;
 }
 
 a {
-  color: #a6ca48;
+  color: #186b4e;
   text-decoration: none;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
@@ -162,13 +161,13 @@ a {
   transition: color 0.2s;
 }
 a:hover {
-  color: #e6db74;
+  color: #18855f;
 }
 
 code {
   padding: 0px 3px 0px 3px;
-  background-color: #1f1f1f;
-  color: #a6a6a6;
+  background-color: #eeeeee;
+  color: #060606;
   font-family: "Envy Code R", "Ubuntu Mono", monospace;
   line-height: 18px;
   white-space: pre;
@@ -176,16 +175,31 @@ code {
 pre code {
   padding: 0px;
   background-color: transparent;
-  color: #f8f8f2;
+  color: #060606;
 }
 table code {
-  background-color: #1a1a1a;
+  background-color: #c3a14a;
 }
 
 a > img {
   vertical-align: text-bottom;
   padding: 5px;
-  background-color: #1f1f1f;
+  background-color: #eeeeee;
+}
+
+.push-down, .resume-image {
+  margin-top: 20px;
+}
+
+.title {
+  color: #5a136b;
+}
+.title a {
+  color: #5a136b;
+}
+
+h2 small.pull-right {
+  margin-top: 10px;
 }
 
 #sidebar {
@@ -193,16 +207,22 @@ a > img {
   top: 0px;
   bottom: 0px;
   left: 0px;
-  padding: 0px 18px 0px 18px;
   width: 300px;
 }
+#sidebar .modules {
+  padding: 0px 20px;
+}
 
-#header {
-  margin: 18px 0px 18px 0px;
+#site-title {
+  margin-bottom: 5px;
+}
+
+#site-subtitle {
+  margin-top: 0px;
 }
 
 #content {
-  margin: 18px 18px 18px 354px;
+  margin: 20px 20px 20px 360px;
 }
 #breadcrumbs + #content {
   margin-top: 72px;
@@ -215,42 +235,42 @@ a > img {
 }
 
 #sidebar {
-  background-color: #1a1a1a;
-  background-image: url("../images/sbg.png");
   background-position: left top;
   background-repeat: repeat;
 }
 
-#header > h1 {
-  font-family: "Ubuntu Mono", sans-serif;
-  font-size: 30px;
-}
-#header > h2 {
-  color: #a6a6a6;
-  font-size: 16px;
-  line-height: 18px;
-}
-#header a {
-  color: white;
-  -webkit-transition: color 0.25s;
-  -moz-transition: color 0.25s;
-  -ms-transition: color 0.25s;
-  -o-transition: color 0.25s;
-  transition: color 0.25s;
-}
-#header a:hover {
-  color: #a6ca48;
+#modules {
+  padding: 0px 20px;
 }
 
-#primary-avatar {
-  width: 60px;
-  float: left;
-  margin-right: 10px;
+#intro-module {
+  height: 90px;
+}
+
+#sidebar-avatar {
+  height: 90px;
+  width: 90px;
+  float: right;
+  margin-left: 10px;
+}
+
+.social-icons {
+  font-size: 1.5em;
+}
+.social-icons a {
+  color: #cccccc;
+  margin-right: 3px;
+}
+.social-icons a:hover {
+  color: #186b4e;
 }
 
 .module {
   margin-top: 18px;
   font-style: italic;
+}
+.module p {
+  margin-bottom: 3px;
 }
 
 .module-nav {
@@ -265,8 +285,8 @@ a > img {
 }
 
 #breadcrumbs {
-  background-color: #1a1a1a;
-  color: #a6a6a6;
+  background-color: #c3a14a;
+  color: #060606;
   font-family: "Ubuntu Mono", sans-serif;
   font-style: italic;
 }
@@ -279,20 +299,20 @@ a > img {
 }
 #breadcrumbs span {
   padding: 0px 6px 0px 6px;
-  color: #d9d9d9;
+  color: #181818;
   font-style: normal;
 }
 
 .item-header {
   padding: 12px;
-  background-color: #1f1f1f;
+  background-color: #eeeeee;
 }
 .item-header > h1 {
   font-size: 24px;
   line-height: 30px;
 }
 .item-header > h2 {
-  color: #a6a6a6;
+  color: #060606;
   font-size: 11px;
   font-style: normal;
   line-height: 18px;
@@ -322,7 +342,7 @@ div.code {
 }
 div.code > div {
   overflow: auto;
-  background-color: #1f1f1f;
+  background-color: #eeeeee;
 }
 div.code pre {
   margin-top: 0px;
@@ -339,8 +359,8 @@ div.code pre {
   padding: 9px;
 }
 .highlighttable .linenos {
-  background-color: #1a1a1a;
-  color: #a6a6a6;
+  background-color: #c3a14a;
+  color: #060606;
 }
 
 .item-header-posts {
@@ -356,15 +376,15 @@ div.code pre {
   line-height: 18px;
 }
 .item-header-posts > h2 a {
-  color: white;
+  color: #282828;
 }
 .item-header-posts > h2 a:hover {
-  color: #a6ca48;
+  color: #186b4e;
 }
 
 .archives {
   padding: 9px;
-  background-color: #1f1f1f;
+  background-color: #eeeeee;
 }
 .archives .archives {
   margin-top: 0px;
@@ -374,17 +394,17 @@ div.code pre {
 }
 
 .archives-year a {
-  color: white;
+  color: #282828;
   font-size: 18px;
   font-style: italic;
   line-height: 18px;
 }
 .archives-year a:hover {
-  color: #a6ca48;
+  color: #186b4e;
 }
 
 .archives-post-date {
-  color: #a6a6a6;
+  color: #060606;
   font-size: 12px;
   font-style: italic;
   text-transform: uppercase;
@@ -395,18 +415,27 @@ div.code pre {
 }
 
 .archives-post-tags {
-  color: #a6a6a6;
+  color: #060606;
   font-size: 10px;
   text-transform: uppercase;
   word-spacing: 2px;
 }
 .archives-post-tags a {
-  color: white;
+  color: #282828;
 }
 .archives-post-tags a:hover {
-  color: #a6ca48;
+  color: #186b4e;
 }
 .archives-post-tags span {
   position: relative;
   top: -1px;
+}
+
+.resume-image {
+  text-align: center;
+}
+.resume-image img {
+  max-width: 180px;
+  max-height: 120px;
+  margin-right: 20px;
 }

@@ -8,21 +8,24 @@
 //
 
 // COLORS
-$bg-d: #222222;
-$bg: #272727;
-$sbg: #1a1a1a;
-$sbg-l: #1f1f1f;
-$fg-d: #a6a6a6;
-$fg: #d9d9d9;
-$fg-l: white;
-$hlt: #a6ca48;
-$hlt-l: #e6db74;
-$pygments-fg: #f8f8f2;
+$bg-d: #cccccc;
+$bg: #eeeeee;
+$sbg: #c3a14a;
+$sbg-l: $bg;
+$fg-d: #060606;
+$fg: #181818;
+$fg-l: #282828;
+$hlt: #186b4e;
+$hlt-l: #18855f;
+$title: #5a136b;
+$title-l: #9e33b8;
+$pygments-fg: $fg-d;
 
 // DIMENSIONS
 $sidebar: 300px;
-$spacer: 18px;
+$spacer: 20px;
 $offset: $sidebar + $spacer * 3;
+$intro-module-height: 90px;
 
 //
 // MIXINS
