@@ -3,6 +3,14 @@
 
 {% set title = post.title %}
 
+{% block head %}
+    {% if post.scripts %}
+        {% for path in post.scripts %}
+            <script src="{{ get_asset(path) }}" type="text/javascript"></script>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     <div class="item">
         <div class="item-header">
