@@ -1,0 +1,21 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+@import 'fontello-all';
+
+$background-color: #070710;
+$primary-color: #ccc;
+$link-color: #c37;
+
+body {
+    background-color: $background-color;
+    color: $primary-color;
+}
+
+a {
+    color: $link-color;
+}
+
+#social-icons li {
+    list-style-type: none;
+}
