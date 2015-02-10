@@ -1,0 +1,30 @@
+$background-color: #000100;
+$link-color: #F00;
+$hover-color: #FFF;
+
+
+body {
+    background-color: $background-color;
+    text-align: center;
+}
+
+a {
+    color: $link-color;
+}
+
+a:hover {
+    color: $hover-color;
+}
+
+#title {
+    text-align: center;
+    margin: 100px auto 30px auto;
+}
+
+#sitemap {
+    margin-bottom: 20px;
+}
+
+#social-icons {
+    font-size: 2em;
+}
