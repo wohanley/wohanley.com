@@ -1,5 +1,4 @@
 ---
-layout: post.html
 title: Tears
 tags: ["art?"]
 scripts: ['js/tears/tears.js',

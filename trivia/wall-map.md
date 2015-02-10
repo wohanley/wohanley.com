@@ -1,10 +1,9 @@
 ---
-layout: post.html
 title: Scraping a map together
 tags: [software]
 ---
 
-I really like the Berlin Wall. I’m not sure what it is about it, but the idea of a wall separating an entire city like that – families, friends, lovers – really strikes me.
+I really like the Berlin Wall. I’m not sure what it is about it, but the idea of a wall separating an entire city like that really strikes me.
 
 When the wall came down, the German government naturally had to figure out what to do with all that concrete. Ordinarily it would have gone to the dump or something, I suppose, but this was concrete with sentimental value. People all over the world wanted pieces of it, so the Germans sent them pieces, and the wall ended up scattered to the winds (mostly westward). Here are all the ones that Wikipedia knows about:
 
