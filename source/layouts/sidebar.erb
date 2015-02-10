@@ -1,0 +1,12 @@
+<% wrap_layout :layout do %>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-11">
+                <%= yield %>
+            </div>        
+            <div class="col-xs-12 col-md-1">
+                <%= partial 'social-icons' %>
+            </div>
+        </div>
+    </div>
+<% end %>
