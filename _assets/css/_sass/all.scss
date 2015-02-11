@@ -9,10 +9,16 @@ $primary-color: #ccc;
 $link-color: #c37;
 $hover-color: #19707f;
 
+$section-margin-top: 20px;
+
 
 body {
     background-color: $background-color;
     color: $primary-color;
+}
+
+.section {
+    margin-top: $section-margin-top;
 }
 
 a {
@@ -26,4 +32,15 @@ a:hover {
 
 #social-icons {
     font-size: 3.5em;
+}
+
+#breadcrumbs > span:after {
+    content: "›";
+    font-style: normal;
+    padding: 0 6px 0 10px;
+}
+
+#breadcrumbs > span:last-child:after {
+    content: none;
+    padding: 0;
 }

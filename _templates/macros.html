@@ -1,0 +1,7 @@
+{% macro breadcrumbs(crumbs) %}
+   {% for crumb in crumbs %}
+      {% set link = crumb[0] %}
+      {% set url = crumb[1]|default(none) %}
+      <span>{% if url %}<a href="{{ get_url(url) }}">{{ link }}</a>{% else %}{{ link }}{% endif %}</span>
+   {% endfor %}
+{% endmacro %}

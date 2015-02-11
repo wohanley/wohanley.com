@@ -7426,6 +7426,10 @@ body {
   color: #ccc;
 }
 
+.section {
+  margin-top: 20px;
+}
+
 a {
   color: #c37;
 }
@@ -7437,4 +7441,15 @@ a:hover {
 
 #social-icons {
   font-size: 3.5em;
+}
+
+#breadcrumbs > span:after {
+  content: "›";
+  font-style: normal;
+  padding: 0 6px 0 10px;
+}
+
+#breadcrumbs > span:last-child:after {
+  content: none;
+  padding: 0;
 }
