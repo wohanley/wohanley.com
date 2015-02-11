@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
     {% include 'page.header.html' %}
@@ -9,44 +8,7 @@
         <title>{% if title %}{{ title }} &ndash; {% endif %}{{ site.title }}{% if not title and site.subtitle %} &ndash; {{ site.subtitle }}{% endif %}</title>
     {% endif %}
 </head>
-
 <body>
-    <div class="container">
-        <!-- id sidebar -->
-        <div class="row">
-            <!-- id content -->    
-            <div class="col-xs-12 col-md-9">
-                {% block content %}{% endblock %}
-            </div>
-        
-            <div class="col-xs-12 col-md-3">
-                <h1 id="site-title" class="title"><a href="{{ get_url() }}">{{ site.title }}</a></h1>
-                {% if site.subtitle %}<h3 id="site-subtitle">{{ site.subtitle }}</h3>{% endif %}
-                
-                <div class="modules">
-                    <div class="module" id="intro-module">
-                        <img id="sidebar-avatar" src="http://www.gravatar.com/avatar/701d229a47e1ea46e5a0b8b42668693c?s=120" alt="avatar" title="Me" class="img-thumbnail pull-right" />
-                        <p>Hi! I’m William O'Hanley. I write code and things, partly because I need to eat and partly because I think it’s cool.</p>
-                    </div>
-                    <div class="module module-nav">
-                        <ul class="unstyled">
-                            <li><a href="{{ get_url('/') }}">About me</a></li>
-                            <li><a href="{{ get_url('/made.html') }}">Things I've made</a></li>
-                        </ul>
-                    </div>
-                    <div class="module">
-                        <p>If you think there's something I'd be interested in, you should <a href="mailto:willy@wohanley.com">get in touch!</a> My PGP key is <a href="/wohanley-pgp-public.asc">here</a> if you're into that sort of thing. You can also find me in these places:</p>
-                        <div class="social-icons">
-                            <a href="https://github.com/wohanley" title="on GitHub"><i class="icon-github"></i></a>
-                            <a href="http://www.linkedin.com/profile/view?id=221157888" title="on LinkedIn"><i class="icon-linkedin"></i></a>
-                            <a href="http://www.meetup.com/PEI-Developers/members/116101552/" title="on Meetup"><i class="icon-meetup"></i></a>
-                            <a href="http://www.last.fm/user/wohanley" title="on last.fm"><i class="icon-lastfm"></i></a>
-                            <a href="http://dontworrygrandmother.wohanley.com/" title="travel blogging on WordPress"><i class="icon-wordpress"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% block content %}{% endblock %}
 </body>
 </html>
