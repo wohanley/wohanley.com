@@ -16,9 +16,11 @@ a:hover {
     color: $hover-color;
 }
 
-#title {
+#site-title {
     text-align: center;
-    margin: 100px auto 30px auto;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    max-width: 100%;
 }
 
 #sitemap {
