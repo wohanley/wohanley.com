@@ -12,9 +12,18 @@ $hover-color: #19707f;
 $section-margin-top: 20px;
 
 
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
 body {
     background-color: $background-color;
     color: $primary-color;
+    margin-bottom: 20px;
 }
 
 .section {
@@ -43,4 +52,74 @@ a:hover {
 #breadcrumbs > span:last-child:after {
     content: none;
     padding: 0;
+}
+
+
+$gallery-link-size: 170px;
+$gallery-link-border-radius: 6px;
+
+.gallery-link {
+    display: inline-block;
+    height: $gallery-link-size;
+    width: $gallery-link-size;
+    background-size: $gallery-link-size $gallery-link-size;
+    margin-right: 10px;
+    margin-top: 10px;
+    @include border-radius($gallery-link-border-radius);
+}
+
+#elm-of-life-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/life.gif');
+}
+
+#stegasaurus-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/asteroids-steg.png');
+}
+
+#elevators-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/elevators.gif');
+}
+
+#tears-gallery {
+    @extend .gallery-link;
+    position: relative;
+
+    #background, #foreground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $gallery-link-size;
+        width: $gallery-link-size;
+        @include border-radius($gallery-link-border-radius)
+    }
+}
+
+#transcat-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/transcat.png');
+}
+
+#oracle-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/fortune.jpeg');
+}
+
+#very-smart-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/golfin.jpg');
+}
+
+#mapper-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/wall-map.png')
+}
+
+
+#small-worlds-screenshot {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

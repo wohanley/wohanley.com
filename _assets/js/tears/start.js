@@ -21,9 +21,9 @@
 
 	window.onload = function () {
 
-        var size = 200;
+        var size = 170;
 
-        var draw = document.getElementById('draw');
+        var draw = document.getElementById('tears-gallery');
         draw.style.width = size + "px";
         draw.style.height = size + "px";
 
