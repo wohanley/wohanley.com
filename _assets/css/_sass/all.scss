@@ -123,6 +123,11 @@ $gallery-link-border-radius: 6px;
     background-image: url('/assets/images/wall-map.png')
 }
 
+#dance-bot-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/dance-bot.png')
+}
+
 
 #small-worlds-screenshot {
     display: block;

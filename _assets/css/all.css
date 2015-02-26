@@ -7461,7 +7461,7 @@ a:hover {
   text-align: center;
 }
 
-.gallery-link, #elm-of-life-gallery, #stegasaurus-gallery, #elevators-gallery, #tears-gallery, #transcat-gallery, #oracle-gallery, #very-smart-gallery, #mapper-gallery {
+.gallery-link, #elm-of-life-gallery, #stegasaurus-gallery, #elevators-gallery, #tears-gallery, #transcat-gallery, #oracle-gallery, #very-smart-gallery, #mapper-gallery, #dance-bot-gallery {
   display: inline-block;
   height: 170px;
   width: 170px;
@@ -7515,6 +7515,10 @@ a:hover {
 
 #mapper-gallery {
   background-image: url("/assets/images/wall-map.png");
+}
+
+#dance-bot-gallery {
+  background-image: url("/assets/images/dance-bot.png");
 }
 
 #small-worlds-screenshot {
