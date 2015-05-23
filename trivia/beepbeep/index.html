@@ -1,0 +1,12 @@
+{% extends 'sidebar.html' %}
+
+
+{% set crumbs = [('home', '/'), ('trivia', '/trivia/'), ('BeepBeep', '/trivia/beepbeep')] %}
+
+
+{% block main_content %}
+<p class="section">This is something neat I made for a directed studies credit at UPEI. It uses sound to determine the distance between two devices, in this case iPads. Skip to about 1:00 for the good stuff.</p>
+<iframe class="section" src="https://player.vimeo.com/video/82580692?byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<h2>How it works</h2>
+<p class="section">In theory, you could do this with one beep. X records the time it beeps, Y records the time it hears the beep, multiply by the speed of sound. In practice, clock synchronization is too hard, and the differences in X's and Y's clocks are at least comparable to the time it takes sound to travel between them. This is an implementation of a system developed at Microsoft Research to do acoustic ranging accurately. With both X and Y generating sound, we can measure locally on each device the elapsed time between arrivals of the two sounds, and that information is actually sufficient to calculate the distance between the devices. Don't believe it? Read <a href="http://research.microsoft.com/en-us/projects/BeepBeep/">the paper</a> to see a lot of formulas explaining how it works in detail.</p>
+{% endblock %}

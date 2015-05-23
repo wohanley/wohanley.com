@@ -27,7 +27,7 @@ description: The personal site of William O'Hanley
 # Used in the site feed.
 email: willy@wohanley.com
 # Your site's subtitle.
-subtitle: will code for food
+# subtitle: will code for food
 # Your site's title. (required to generate a valid feed)
 title: wohanley
 
