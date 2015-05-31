@@ -1,0 +1,43 @@
+{% extends 'sidebar.html' %}
+
+
+{% set crumbs = [('home', '/'), ('foma', '/foma/'), ('eel-grass', '/foma/eel-grass')] %}
+
+
+{% block main_content %}
+
+<div class="content-header">
+  <h2>Duodecim</h2>
+  <h5>A game demanded by <a href="https://twitter.com/TweeterRater">@TweeterRater</a></h5>
+</div>
+
+<h3>@Kalarlis</h3>
+
+
+<h3>@Horse_Crimes</h3>
+
+
+<h3>@timescanner</h3>
+
+
+<h3>@sea_trash</h3>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">I. so god created mankind in his image, in the image of god he created them, fleshy sacks of plasma and gruesome ideas</p>&mdash; bailey (@venturehorse) <a href="https://twitter.com/venturehorse/status/319184109270347777">April 2, 2013</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">II. we are a beautiful tempest of nerves and electrical impulses and higher reasoning and all of them want us to go swap cum</p>&mdash; bailey (@venturehorse) <a href="https://twitter.com/venturehorse/status/319184167323721729">April 2, 2013</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">III. equal parts candide&#39;s blind optimism, oedipus&#39; luck, and don juan&#39;s morality</p>&mdash; bailey (@venturehorse) <a href="https://twitter.com/venturehorse/status/319184231811141634">April 2, 2013</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">IV. physically homo sapiens, emotionally porifera</p>&mdash; bailey (@venturehorse) <a href="https://twitter.com/venturehorse/status/319184282830651393">April 2, 2013</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">V. only a few generations from the days of scratching penises into cave walls by moonlight</p>&mdash; bailey (@venturehorse) <a href="https://twitter.com/venturehorse/status/319184331480383491">April 2, 2013</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">VI.  and confused professionals are putting war paint and wolf pelts over their business suits and wondering why feral feels so right</p>&mdash; bailey (@venturehorse) <a href="https://twitter.com/venturehorse/status/319184380578918402">April 2, 2013</a></blockquote>
+<blockquote>VII. "siri, how do I talk to people" beg all these lonely children</blockquote>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">VIII. accepting your sadness and violence and lust? way to give into the man, sheeple</p>&mdash; bailey (@venturehorse) <a href="https://twitter.com/venturehorse/status/319184485411344385">April 2, 2013</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">IX. conceive a surgical machine that can manipulate objects a tenth a millimeter thick, fuck it,</p>&mdash; bailey (@venturehorse) <a href="https://twitter.com/venturehorse/status/319184537059995649">April 2, 2013</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">X. even scholars agree that man&#39;s greatest triumphs are the pyramids at giza, followed by autofellatio</p>&mdash; bailey (@venturehorse) <a href="https://twitter.com/venturehorse/status/319184584862470144">April 2, 2013</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">XI. humanity is god&#39;s top on favstar and that is the only reason he hasn&#39;t deleted us yet</p>&mdash; bailey (@venturehorse) <a href="https://twitter.com/venturehorse/status/319184667272175616">April 2, 2013</a></blockquote>
+
+<h3>@hexachordal</h3>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">IX But inside us was a rotting animal that would with no warning rip shrieking through our proud and gorgeous surface</p>&mdash; •*´¨`*•T O m•*´¨`*• (@hexachordal) <a href="https://twitter.com/hexachordal/status/319188059675557889">April 2, 2013</a></blockquote>
+
+<h3>and @castinemachine, a DNF</h3>
+<div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/_x0gmKnWp35Gel0OHfqsyA/69246510004" data-did="9c16731aa20129c8e01414d33d91319923dc6495"><a href="http://careandkeepingofaheart.tumblr.com/post/69246510004/o-o">http://careandkeepingofaheart.tumblr.com/post/69246510004/o-o</a></div><script async src="https://secure.assets.tumblr.com/post.js"></script>
+
+{% endblock %}
