@@ -7461,7 +7461,7 @@ a:hover {
   text-align: center;
 }
 
-.gallery-link, #elm-of-life-gallery, #stegasaurus-gallery, #elevators-gallery, #tears-gallery, #transcat-gallery, #oracle-gallery, #very-smart-gallery, #mapper-gallery, #dance-bot-gallery, #tswift-tunes-gallery, #beep-beep-gallery {
+.gallery-link, #elm-of-life-gallery, #stegasaurus-gallery, #elevators-gallery, #tears-gallery, #transcat-gallery, #oracle-gallery, #very-smart-gallery, #mapper-gallery, #dance-bot-gallery, #tswift-tunes-gallery, #beep-beep-gallery, #vigil-gallery {
   display: inline-block;
   height: 170px;
   width: 170px;
@@ -7527,6 +7527,10 @@ a:hover {
 
 #beep-beep-gallery {
   background-image: url("/assets/images/response.png");
+}
+
+#vigil-gallery {
+  background-image: url("/assets/images/vigil.png");
 }
 
 #small-worlds-screenshot {

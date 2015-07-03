@@ -138,6 +138,11 @@ $gallery-link-border-radius: 6px;
     background-image: url('/assets/images/response.png')
 }
 
+#vigil-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/vigil.png')
+}
+
 
 #small-worlds-screenshot {
     display: block;
