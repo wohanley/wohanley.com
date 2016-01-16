@@ -14,6 +14,17 @@
 {% endblock %}
 
 
+{% macro gallery_link(post_id) %}
+
+    {% for post in posts %}
+        {% if post.id == post_id %}
+            <a id="{{ post.title }}-gallery" title="{{ post.desc }}" href="{{ post.url }}"></a>
+        {% endif %}
+    {% endfor %}
+
+{% endmacro %}
+
+
 {% block main_content %}
 <div id="gallery" class="section">
     <a id="autofriend-gallery" title="bot that favs all your selfies" href="http://twitter.com/luvurself_ie"></a>
@@ -30,13 +41,7 @@
         <canvas id="foreground" style="z-index: 1;"></canvas>
     </a>
     <a id="transcat-gallery" title="uncorrected transmission error simulator" href="http://github.com/wohanley/trans"></a>
-
-    {% for post in posts %}
-
-    <a id="{{ post.title }}-gallery" title="{{ post.desc }}" href="{{ post.url }}">
-    
-    {% endfor %}
-
+    {{ gallery_link('stegasaurus') }}
     <a id="stegasaurus-gallery" title="simple steganography" href="{{ get_url('/trivia/stegasaurus.html') }}"></a>
     <a id="mapper-gallery" title="map of Berlin Wall sections" href="http://github.com/wohanley/wiki-mapper"></a>
 </div>
