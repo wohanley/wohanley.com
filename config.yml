@@ -25,11 +25,16 @@ author: wohanley
 # A description of your site to be used in header meta tags.
 description: The personal site of William O'Hanley
 # Used in the site feed.
-email: willy@wohanley.com
+email: feed@wohanley.com
 # Your site's subtitle.
 # subtitle: will code for food
 # Your site's title. (required to generate a valid feed)
 title: wohanley
+
+
+containers:
+    trivia:
+        url: /trivia/<slug>/
 
 
 #
@@ -37,7 +42,7 @@ title: wohanley
 #
 
 # If you'd like to enable Google Analytics for your site, set this to your tracking code.
-analytics:
+#analytics:
 
 
 #
