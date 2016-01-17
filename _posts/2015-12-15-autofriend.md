@@ -9,4 +9,4 @@ tags: [project, bot]
 ---
 
 
-<p class="section">I made a bot that you teach it what your face looks like and then it compliments you every time it sees it.</p>
+<p class="section">I made a <a href="https://twitter/com/luvurself_ie">bot</a> that you teach it what your face looks like and then it compliments you every time it sees it.</p>
