@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
@@ -123,7 +125,7 @@ $gallery-link-border-radius: 6px;
     background-image: url('/assets/images/golfin.jpg');
 }
 
-#mapper-gallery {
+#wiki-mapper-gallery {
     @extend .gallery-link;
     background-image: url('/assets/images/wall-map.png')
 }
@@ -138,7 +140,7 @@ $gallery-link-border-radius: 6px;
     background-image: url('/assets/images/tswift.jpg')
 }
 
-#beep-beep-gallery {
+#beepbeep-gallery {
     @extend .gallery-link;
     background-image: url('/assets/images/response.png')
 }

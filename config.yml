@@ -15,6 +15,7 @@
 base_url: /
 domain: wohanley.com
 
+posts_url: /posts/<slug>/
 
 #
 # METADATA
@@ -30,11 +31,6 @@ email: feed@wohanley.com
 # subtitle: will code for food
 # Your site's title. (required to generate a valid feed)
 title: wohanley
-
-
-containers:
-    trivia:
-        url: /trivia/<slug>/
 
 
 #

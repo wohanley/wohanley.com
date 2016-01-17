@@ -3,7 +3,7 @@ id: stegasaurus
 title: stegasaurus
 desc: simple steganography
 layout: post.html
-crumbs: [['home', '/'], ['trivia', '/trivia/'], ['stegasaurus', '/trivia/stegasaurus.html']]
+crumbs: [['home', '/'], ['trivia', '/trivia/'], ['stegasaurus', '/posts/stegasaurus/']]
 tags: [project]
 ---
 
