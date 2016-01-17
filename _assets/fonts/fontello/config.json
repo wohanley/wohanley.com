@@ -7,9 +7,23 @@
   "ascent": 850,
   "glyphs": [
     {
-      "uid": "4f2d536b4a46a9aff942eff7b967205f",
-      "css": "github",
+      "uid": "192f794890a048e5598e717d02adcc78",
+      "css": "tumblr",
       "code": 59393,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M527 742L571 874Q559 893 510 911T411 929Q353 930 304 914T225 873 172 814 141 747 132 681V377H38V257Q78 243 110 218T161 168 193 111 212 56 220 7Q221 4 223 2T227 0H363V237H549V377H363V666Q363 683 366 698T379 727 407 750 452 758Q496 757 527 742Z",
+        "width": 571.4
+      },
+      "search": [
+        "tumblr"
+      ]
+    },
+    {
+      "uid": "653de9c2803cf1e2080007c2362f5345",
+      "css": "github",
+      "code": 59394,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -21,9 +35,9 @@
       ]
     },
     {
-      "uid": "d9e174b8b97a7f196555004b09f0c7a1",
+      "uid": "b79d0c7c02bbdd023cb0f7b0ce556cb5",
       "css": "linkedin",
-      "code": 59394,
+      "code": 59395,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -35,9 +49,9 @@
       ]
     },
     {
-      "uid": "5c513e668765b4f5c331a8d6fb3f818c",
+      "uid": "2358783a868235055cd841f561e2dd33",
       "css": "lastfm",
-      "code": 59395,
+      "code": 59397,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -49,7 +63,7 @@
       ]
     },
     {
-      "uid": "dce94d5d36cc3041d160c7c3eea3f50b",
+      "uid": "f8c093ba8cbaf51b0b17a87f902a52a1",
       "css": "meetup",
       "code": 59396,
       "src": "custom_icons",
@@ -63,9 +77,9 @@
       ]
     },
     {
-      "uid": "b8fc266f643229d1f33a3a3b245f8c3b",
+      "uid": "40f8c0ee9567ec45670c587b66691fef",
       "css": "wordpress",
-      "code": 59397,
+      "code": 59398,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -77,27 +91,51 @@
       ]
     },
     {
-      "uid": "ccc2329632396dc096bb638d4b46fb98",
-      "css": "mail-alt",
-      "code": 59400,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "c1f1975c885aa9f3dad7810c53b82074",
-      "css": "lock",
-      "code": 59399,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "43fcf807461234935e65261328e1dff6",
-      "css": "tumblr",
-      "code": 59392,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "627abcdb627cb1789e009c08e2678ef9",
+      "uid": "c2e007c3ea4408a0528f2efc12a12700",
       "css": "twitter",
-      "code": 59398,
+      "code": 59399,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M904 228Q867 282 814 321 814 329 814 344 814 417 793 489T729 628 626 745 482 827 301 857Q150 857 25 776 44 779 68 779 194 779 292 702 233 700 187 666T123 577Q142 579 157 579 181 579 205 573 142 560 101 511T60 396V394Q98 415 142 417 105 392 83 353T61 267Q61 218 86 176 154 259 250 309T458 364Q453 343 453 323 453 248 506 196T633 143Q712 143 765 200 826 188 879 156 859 220 800 256 852 250 904 228Z",
+        "width": 928.6
+      },
+      "search": [
+        "twitter"
+      ]
+    },
+    {
+      "uid": "7091ab383254baf3a8c5cf5162407a13",
+      "css": "lock",
+      "code": 59400,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M179 429H464V321Q464 262 422 220T321 179 220 220 179 321V429ZM643 482V804Q643 826 627 841T589 857H54Q31 857 16 841T0 804V482Q0 460 16 444T54 429H71V321Q71 219 145 145T321 71 498 145 571 321V429H589Q612 429 627 444T643 482Z",
+        "width": 642.9
+      },
+      "search": [
+        "lock"
+      ]
+    },
+    {
+      "uid": "ee65fa8635c7772577249d18138f13f5",
+      "css": "mail-alt",
+      "code": 59401,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M1000 396V839Q1000 876 974 902T911 929H89Q53 929 26 902T0 839V396Q25 424 56 445 258 582 334 637 366 661 385 674T438 701 499 714H501Q529 714 562 701T615 674 666 637Q761 569 944 445 976 423 1000 396ZM1000 232Q1000 276 973 316T905 385Q695 531 643 566 638 570 620 583T590 605 561 623 528 638 501 643H499Q487 643 472 638T439 623 410 605 380 583 357 566Q306 531 210 465T96 385Q61 362 31 321T0 244Q0 201 23 172T89 143H911Q947 143 973 169T1000 232Z",
+        "width": 1000
+      },
+      "search": [
+        "mail-alt"
+      ]
+    },
+    {
+      "uid": "72b1277834cba5b7944b0a6cac7ddb0d",
+      "css": "rss",
+      "code": 59392,
       "src": "fontawesome"
     }
   ]
