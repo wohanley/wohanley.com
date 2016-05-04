@@ -7386,102 +7386,102 @@ button.close {
   content: '\e800';
 }
 
-/* 'î ' */
+/* '' */
 .icon-tumblr:before {
   content: '\e801';
 }
 
-/* 'î ' */
+/* '' */
 .icon-github:before {
   content: '\e802';
 }
 
-/* 'î ' */
+/* '' */
 .icon-linkedin:before {
   content: '\e803';
 }
 
-/* 'î ' */
+/* '' */
 .icon-meetup:before {
   content: '\e804';
 }
 
-/* 'î ' */
+/* '' */
 .icon-lastfm:before {
   content: '\e805';
 }
 
-/* 'î ' */
+/* '' */
 .icon-wordpress:before {
   content: '\e806';
 }
 
-/* 'î ' */
+/* '' */
 .icon-twitter:before {
   content: '\e807';
 }
 
-/* 'î ' */
+/* '' */
 .icon-lock:before {
   content: '\e808';
 }
 
-/* 'î ' */
+/* '' */
 .icon-mail-alt:before {
   content: '\e809';
 }
 
-/* 'î ' */
+/* '' */
 .icon-rss:before {
   content: '\e800';
 }
 
-/* 'î ' */
+/* '' */
 .icon-tumblr:before {
   content: '\e801';
 }
 
-/* 'î ' */
+/* '' */
 .icon-github:before {
   content: '\e802';
 }
 
-/* 'î ' */
+/* '' */
 .icon-linkedin:before {
   content: '\e803';
 }
 
-/* 'î ' */
+/* '' */
 .icon-meetup:before {
   content: '\e804';
 }
 
-/* 'î ' */
+/* '' */
 .icon-lastfm:before {
   content: '\e805';
 }
 
-/* 'î ' */
+/* '' */
 .icon-wordpress:before {
   content: '\e806';
 }
 
-/* 'î ' */
+/* '' */
 .icon-twitter:before {
   content: '\e807';
 }
 
-/* 'î ' */
+/* '' */
 .icon-lock:before {
   content: '\e808';
 }
 
-/* 'î ' */
+/* '' */
 .icon-mail-alt:before {
   content: '\e809';
 }
 
-/* 'î ' */
+/* '' */
 @font-face {
   font-family: 'fontello';
   src: url("../font/fontello.eot?22750116");
@@ -7532,52 +7532,52 @@ button.close {
   content: '\e800';
 }
 
-/* 'î ' */
+/* '' */
 .icon-tumblr:before {
   content: '\e801';
 }
 
-/* 'î ' */
+/* '' */
 .icon-github:before {
   content: '\e802';
 }
 
-/* 'î ' */
+/* '' */
 .icon-linkedin:before {
   content: '\e803';
 }
 
-/* 'î ' */
+/* '' */
 .icon-meetup:before {
   content: '\e804';
 }
 
-/* 'î ' */
+/* '' */
 .icon-lastfm:before {
   content: '\e805';
 }
 
-/* 'î ' */
+/* '' */
 .icon-wordpress:before {
   content: '\e806';
 }
 
-/* 'î ' */
+/* '' */
 .icon-twitter:before {
   content: '\e807';
 }
 
-/* 'î ' */
+/* '' */
 .icon-lock:before {
   content: '\e808';
 }
 
-/* 'î ' */
+/* '' */
 .icon-mail-alt:before {
   content: '\e809';
 }
 
-/* 'î ' */
+/* '' */
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'fontello';
   font-style: normal;
@@ -7842,4 +7842,7 @@ pre.prose {
 .resume-item img {
   max-width: 100%;
   max-height: 120px;
+}
+.resume-item .img-col {
+  text-align: center;
 }

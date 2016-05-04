@@ -4,7 +4,7 @@
 
 {% macro resumeItem(id, title, date, description, image, imageAlt, imageTitle) -%}
 <div id="{{ id }}" class="resume-item row">
-    <div class="col-xs-3 col-md-2">
+    <div class="img-col col-xs-3 col-md-2">
         <img src="{{ image }}" alt="{{ imageAlt }}" title="{{ imageTitle }}" />
     </div>
     <div class="col-xs-9 col-md-10">
@@ -24,13 +24,13 @@
                 {{ _m.breadcrumbs(crumbs) }}
             </div>
             {% endif %}
-            <h1>Liam O'Hanley</h1>
-            <h4>Halifax, Canada</h4>
+            <h1>William O'Hanley</h1>
+            <h4>Vancouver, Canada</h4>
             <hr />
             <p>I have over two years of software development experience, from creating <a href="#adeptio">novel</a>, <a href="#trade-me">large-scale</a> web applications, to making emerging wireless technology available to <a href="#upei-research">medical professionals</a>, to <a href="#ctu">teaching</a> computer science in China, to being downright <a href="https://twitter.com/movesuggestions">weird</a> and <a href="https://twitter.com/tswift_tunes">silly</a>. You can see a bunch of my experiments <a href="/trivia">here</a>. I'm a quick and enthusiastic learner, so if you want me to do something I haven't done before, don't be afraid to <a href="mai&#108;to&#58;&#37;6D&#101;&#64;&#119;&#111;h&#37;61&#37;6E%&#54;&#67;e&#121;&#46;com">ask!</a></p>
             <h2 class="resume-section-head">Skills and technologies</h2>
             <ul>
-                <li>Web technologies like HTML/CSS/JS, jQuery, Bootstrap and Knockout.js</li>
+                <li>Web technologies like HTML/CSS/JS, Angular, lodash, and jQuery</li>
                 <li>Microsoft web stack: ASP.NET MVC, C#, Entity Framework, SQL Server, Azure</li>
                 <li>JVM languages (Java, Scala and Clojure)</li>
                 <li>Scrum/Agile development</li>
@@ -38,11 +38,12 @@
                 <li>Some languages with places in my heart, in chronological order: Scheme, Python, Java, SQL, HTML, C#, Javascript, SASS, Haskell, Elm, Clojure, Scala</li>
             </ul>
             <h2 class="resume-section-head">Work history</h2>
-            {{ resumeItem("trade-me", "Intermediate Developer, Trade Me", "Southern Hemisphere summer 2014-15", "I did full stack .NET web development for Trade Me, an online marketplace that generates 60% of all web traffic in New Zealand. I designed and built medium-sized features mostly independently and delivered them to over 3.6 million users. I was also part of a newly forming team, which meant a thoughtful look at management and human processes, experimenting with tweaks to Scrum and Kanban.", get_asset('images/kev.png'), "Trade Me's mascot", "Kevin the kiwi") }}
+            {{ resumeItem("scholantis", "Developer, Scholantis", "since September 2015", "I work with a small team on public-facing web sites and a diverse set of internal web-based tools for school districts, students, teachers, and administrators. As developer #2 on a team light on process and explicit standards, I've driven efforts to introduce code review and automated unit testing alongside my normal feature ownership responsibilities, leading to the creation of hundreds of tests in an environment that previously had none.", get_asset('images/scholantis-logo.png'), "Scholantis logo", "Scholantis") }}
+            {{ resumeItem("trade-me", "Developer, Trade Me", "Southern Hemisphere summer 2014-15", "I did full stack .NET web development for Trade Me, an online marketplace that generates 60% of all web traffic in New Zealand. I designed and built medium-sized features mostly independently and delivered them to over 3.6 million users. I was also part of a newly forming team, which meant a thoughtful look at management and human processes, experimenting with tweaks to Scrum and Kanban.", get_asset('images/kev.png'), "Trade Me's mascot", "Kevin the kiwi") }}
             {{ resumeItem("dankook-teaching", "English Teacher, Dankook University", "Summer 2014", "I taught English to beginning, intermediate, and advanced level students at Dankook University's Cheonan campus, as part of a summer exchange with UPEI.", get_asset('images/dku-logo.png'), "DKU logo", "Dankook University") }}
             {{ resumeItem("ctu", "Instructor, Chengdu Technological University", "March 2014", "I worked as a visiting instructor at Chengdu Technological University under a short-term contract with Holland College, teaching introductory web application development and VB.NET courses to Chinese students.", get_asset('images/hc-logo.png'), "Holland College logo", "Holland College") }}
             {{ resumeItem("adeptio", "Developer, Adeptio", "May 2012 to October 2013", "I helped build Adeptio, an ASP.NET MVC3 single page web application for achievement planning, in a Scrum environment. Even as a student, I was a major contributor to this application, with input into overarching architectural decisions and design patterns. Technical challenges included a UNIX-like permission system, distributed consensus, and a Google- and Exchange-integrated calendar.", get_asset('images/adeptio.png'), "Adeptio logo", "Adeptio") }}
-            {{ resumeItem("upei-research", "Research Assistant, UPEI", "Summer 2011", "I made an Android application applying wireless sensor network technology to medical devices under an NSERC Undergraduate Student Research Award. The application enabled doctors, nurses and other medical staff to monitor their patients wirelessly from an Android device, taking readings like blood pressure, pulse, and oximetry. I knew nothing about Android and little about Java in May and was the only developer on the project, so I needed to be very good at learning independently. I gave a presentation on this project at the 2011 UPEI Students' Undergraduate Research Conference.", get_asset('images/upei-crest.png'), "UPEI logo", "UPEI") }}
+            {{ resumeItem("upei-research", "Research Assistant, UPEI", "Summer 2011", "I made an Android application applying wireless sensor network technology to medical devices under an NSERC Undergraduate Student Research Award. The application enabled doctors, nurses and other medical staff to monitor their patients wirelessly from an Android device, taking readings like blood pressure, pulse, and oximetry. I knew nothing about Android and little about Java in May and was the only developer on the project, so I did a lot of independent learning. I gave a presentation on this project at the 2011 UPEI Students' Undergraduate Research Conference.", get_asset('images/upei-crest.png'), "UPEI logo", "UPEI") }}
             <h2 class="resume-section-head">Education</h2>
             {{ resumeItem("upei", "University of PEI", "September 2010 to summer 2014", "Home base for my degree, a BSc in Computer Science with a minor in Mathematics and a co-operative education annotation. I also spent a year in Dalhousie University's Integrated Science Program, a semester as a Killam Fellow at Ithaca College in New York, and a summer at Dankook University's English Village. GPA: 4.1", get_asset('images/upei-crest.png'), "UPEI logo", "UPEI") }}
             <h2 class="resume-section-head">Awards</h2>
@@ -53,7 +54,7 @@
         <div class="col-xs-12 col-md-1">
             <div id="social-icons">
                 <a href="https://github.com/wohanley" title="GitHub"><i class="icon-github"></i></a>
-                <a href="http://www.linkedin.com/profile/view?id=221157888" title="LinkedIn"><i class="icon-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/wohanley" title="LinkedIn"><i class="icon-linkedin"></i></a>
                 <a title="send me an electronic mail" href='mai&#108;to&#58;&#37;6D&#101;&#64;&#119;&#111;h&#37;61&#37;6E%&#54;&#67;e&#121;&#46;com'><i class="icon-mail-alt"></i></a>
                 <a href="/wohanley-pgp-public.asc" title="my PGP public key, if you want it"><i class="icon-lock"></i></a>
             </div>
