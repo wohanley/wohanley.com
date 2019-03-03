@@ -1,3 +1,4 @@
+/* line 6, _sass/screen.scss */
 * {
   margin: 0px;
   padding: 0px;
@@ -5,6 +6,7 @@
   outline: invert none 0px;
 }
 
+/* line 16, _sass/screen.scss */
 body {
   background-color: #eeeeee;
   background-position: left top;
@@ -14,34 +16,42 @@ body {
   font-size: 13px;
 }
 
+/* line 29, _sass/screen.scss */
 blockquote, dl, ol, p, pre, table, ul {
   margin: 18px 0px 18px 0px;
 }
 
+/* line 33, _sass/screen.scss */
 blockquote {
   overflow: hidden;
   padding: 0px 18px 0px 18px;
   background-color: #eeeeee;
 }
 
+/* line 39, _sass/screen.scss */
 dd, dt {
   line-height: 18px;
 }
 
+/* line 44, _sass/screen.scss */
 dl.horizontal > dd {
   margin-left: 65px;
 }
+/* line 46, _sass/screen.scss */
 dl.horizontal > dd + dt {
   margin-top: 18px;
 }
+/* line 48, _sass/screen.scss */
 dl.horizontal > dd + dt + dd {
   margin-top: 18px;
 }
+/* line 53, _sass/screen.scss */
 dl.horizontal > dt {
   float: left;
   width: 50px;
 }
 
+/* line 59, _sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #282828;
   font-style: italic;
@@ -49,73 +59,91 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 18px;
 }
 
+/* line 68, _sass/screen.scss */
 h1, h2 {
   line-height: 36px;
 }
 
+/* line 72, _sass/screen.scss */
 h1 {
   font-size: 28px;
 }
 
+/* line 76, _sass/screen.scss */
 h2 {
   font-size: 22px;
 }
 
+/* line 80, _sass/screen.scss */
 h3 {
   font-size: 18px;
 }
 
+/* line 84, _sass/screen.scss */
 h4 {
   font-size: 16px;
 }
 
+/* line 88, _sass/screen.scss */
 h5 {
   font-size: 14px;
 }
 
+/* line 92, _sass/screen.scss */
 h6 {
   font-size: 12px;
 }
 
+/* line 96, _sass/screen.scss */
 li {
   line-height: 18px;
 }
+/* line 98, _sass/screen.scss */
 ol > li:before, ul > li:before {
   padding-right: 8px;
   color: #186b4e;
 }
+/* line 102, _sass/screen.scss */
 ol > li {
   counter-increment: item;
 }
+/* line 104, _sass/screen.scss */
 ol > li:before {
   content: counter(item,decimal) ".";
 }
+/* line 108, _sass/screen.scss */
 ul > li:before {
   content: "\2022";
 }
+/* line 111, _sass/screen.scss */
 ul.unstyled > li:before {
   padding-right: 0px;
   content: none;
 }
 
+/* line 117, _sass/screen.scss */
 ol, ul {
   list-style-image: none;
   list-style-position: inside;
   list-style-type: none;
 }
+/* line 123, _sass/screen.scss */
 ol ol, ol ul, ul ol, ul ul {
   margin: 0px 0px 0px 20px;
 }
 
+/* line 128, _sass/screen.scss */
 ol {
   counter-reset: item;
 }
 
+/* line 132, _sass/screen.scss */
 p {
   line-height: 18px;
   text-align: justify;
 }
 
+/* line 137, _sass/screen.scss */
 pre {
   padding: 0px 3px 0px 3px;
   background-color: #eeeeee;
@@ -123,26 +151,32 @@ pre {
   line-height: 18px;
 }
 
+/* line 144, _sass/screen.scss */
 table {
   background-color: #eeeeee;
   border-collapse: collapse;
 }
 
+/* line 149, _sass/screen.scss */
 td, th {
   padding: 9px;
   line-height: 18px;
 }
 
+/* line 155, _sass/screen.scss */
 td > :first-child {
   margin-top: 0px;
 }
+/* line 158, _sass/screen.scss */
 td > :last-child {
   margin-bottom: 0px;
 }
+/* line 161, _sass/screen.scss */
 tr:nth-child(2n) > td {
   background-color: #cccccc;
 }
 
+/* line 166, _sass/screen.scss */
 th {
   background-color: #c3a14a;
   color: #186b4e;
@@ -151,6 +185,7 @@ th {
   text-align: left;
 }
 
+/* line 176, _sass/screen.scss */
 a {
   color: #186b4e;
   text-decoration: none;
@@ -160,10 +195,12 @@ a {
   -o-transition: color 0.2s;
   transition: color 0.2s;
 }
+/* line 180, _sass/screen.scss */
 a:hover {
   color: #18855f;
 }
 
+/* line 185, _sass/screen.scss */
 code {
   padding: 0px 3px 0px 3px;
   background-color: #eeeeee;
@@ -172,36 +209,44 @@ code {
   line-height: 18px;
   white-space: pre;
 }
+/* line 192, _sass/screen.scss */
 pre code {
   padding: 0px;
   background-color: transparent;
   color: #060606;
 }
+/* line 197, _sass/screen.scss */
 table code {
   background-color: #c3a14a;
 }
 
+/* line 203, _sass/screen.scss */
 a > img {
   vertical-align: text-bottom;
   padding: 5px;
   background-color: #eeeeee;
 }
 
+/* line 210, _sass/screen.scss */
 .push-down, .resume-image {
   margin-top: 20px;
 }
 
+/* line 214, _sass/screen.scss */
 .title {
   color: #5a136b;
 }
+/* line 216, _sass/screen.scss */
 .title a {
   color: #5a136b;
 }
 
+/* line 221, _sass/screen.scss */
 h2 small.pull-right {
   margin-top: 10px;
 }
 
+/* line 229, _sass/screen.scss */
 #sidebar {
   position: fixed;
   top: 0px;
@@ -209,44 +254,55 @@ h2 small.pull-right {
   left: 0px;
   width: 300px;
 }
+/* line 235, _sass/screen.scss */
 #sidebar .modules {
   padding: 0px 20px;
 }
 
+/* line 240, _sass/screen.scss */
 #site-title {
   margin-bottom: 5px;
 }
 
+/* line 244, _sass/screen.scss */
 #site-subtitle {
   margin-top: 0px;
 }
 
+/* line 248, _sass/screen.scss */
 #content {
   margin: 20px 20px 20px 360px;
 }
+/* line 250, _sass/screen.scss */
 #breadcrumbs + #content {
   margin-top: 72px;
 }
+/* line 253, _sass/screen.scss */
 #content > :first-child {
   margin-top: 0px;
 }
+/* line 256, _sass/screen.scss */
 #content > :last-child {
   margin-bottom: 0px;
 }
 
+/* line 264, _sass/screen.scss */
 #sidebar {
   background-position: left top;
   background-repeat: repeat;
 }
 
+/* line 271, _sass/screen.scss */
 #modules {
   padding: 0px 20px;
 }
 
+/* line 275, _sass/screen.scss */
 #intro-module {
   height: 90px;
 }
 
+/* line 279, _sass/screen.scss */
 #sidebar-avatar {
   height: 90px;
   width: 90px;
@@ -254,63 +310,77 @@ h2 small.pull-right {
   margin-left: 10px;
 }
 
+/* line 286, _sass/screen.scss */
 .social-icons {
   font-size: 1.5em;
 }
+/* line 288, _sass/screen.scss */
 .social-icons a {
   color: #cccccc;
   margin-right: 3px;
 }
+/* line 291, _sass/screen.scss */
 .social-icons a:hover {
   color: #186b4e;
 }
 
+/* line 297, _sass/screen.scss */
 .module {
   margin-top: 18px;
   font-style: italic;
 }
+/* line 300, _sass/screen.scss */
 .module p {
   margin-bottom: 3px;
 }
 
+/* line 305, _sass/screen.scss */
 .module-nav {
   font-family: "Ubuntu Mono", sans-serif;
   font-style: normal;
   text-transform: uppercase;
 }
 
+/* line 313, _sass/screen.scss */
 #footer {
   font-size: 11px;
   text-transform: uppercase;
 }
 
+/* line 318, _sass/screen.scss */
 #breadcrumbs {
   background-color: #c3a14a;
   color: #060606;
   font-family: "Ubuntu Mono", sans-serif;
   font-style: italic;
 }
+/* line 323, _sass/screen.scss */
 #breadcrumbs > li {
   float: left;
 }
+/* line 325, _sass/screen.scss */
 #breadcrumbs > li:before {
   padding-right: 0px;
   content: none;
 }
+/* line 330, _sass/screen.scss */
 #breadcrumbs span {
   padding: 0px 6px 0px 6px;
   color: #181818;
   font-style: normal;
 }
 
+/* line 337, _sass/screen.scss */
 .item-header {
   padding: 12px;
   background-color: #eeeeee;
 }
+/* line 340, _sass/screen.scss */
 .item-header > h1 {
   font-size: 24px;
   line-height: 30px;
 }
+/* line 346, _sass/screen.scss */
 .item-header > h2 {
   color: #060606;
   font-size: 11px;
@@ -319,31 +389,39 @@ h2 small.pull-right {
   text-transform: uppercase;
   word-spacing: 2px;
 }
+/* line 356, _sass/screen.scss */
 .item-header span {
   position: relative;
   top: -1px;
 }
 
+/* line 362, _sass/screen.scss */
 .item-body {
   margin-top: 18px;
 }
+/* line 364, _sass/screen.scss */
 .item-body > :first-child {
   margin-top: 0px;
 }
+/* line 367, _sass/screen.scss */
 .item-body > :last-child {
   margin-bottom: 0px;
 }
+/* line 370, _sass/screen.scss */
 .item-body h1 {
   margin: 24px 0px -6px 0px;
 }
 
+/* line 375, _sass/screen.scss */
 div.code {
   margin: 18px 0px 18px 0px;
 }
+/* line 377, _sass/screen.scss */
 div.code > div {
   overflow: auto;
   background-color: #eeeeee;
 }
+/* line 381, _sass/screen.scss */
 div.code pre {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -351,41 +429,51 @@ div.code pre {
   background-color: transparent;
 }
 
+/* line 391, _sass/screen.scss */
 .highlighttable {
   margin: 0px;
   background-color: transparent;
 }
+/* line 394, _sass/screen.scss */
 .highlighttable .linenos, .highlighttable .code {
   padding: 9px;
 }
+/* line 397, _sass/screen.scss */
 .highlighttable .linenos {
   background-color: #c3a14a;
   color: #060606;
 }
 
+/* line 403, _sass/screen.scss */
 .item-header-posts {
   margin: 18px 0px 18px 0px;
   padding: 9px;
 }
+/* line 406, _sass/screen.scss */
 .item-header-posts > h1 {
   font-size: 16px;
   line-height: 18px;
 }
+/* line 410, _sass/screen.scss */
 .item-header-posts > h2 {
   font-size: 10px;
   line-height: 18px;
 }
+/* line 413, _sass/screen.scss */
 .item-header-posts > h2 a {
   color: #282828;
 }
+/* line 415, _sass/screen.scss */
 .item-header-posts > h2 a:hover {
   color: #186b4e;
 }
 
+/* line 422, _sass/screen.scss */
 .archives {
   padding: 9px;
   background-color: #eeeeee;
 }
+/* line 425, _sass/screen.scss */
 .archives .archives {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -393,16 +481,19 @@ div.code pre {
   background-color: transparent;
 }
 
+/* line 436, _sass/screen.scss */
 .archives-year a {
   color: #282828;
   font-size: 18px;
   font-style: italic;
   line-height: 18px;
 }
+/* line 443, _sass/screen.scss */
 .archives-year a:hover {
   color: #186b4e;
 }
 
+/* line 449, _sass/screen.scss */
 .archives-post-date {
   color: #060606;
   font-size: 12px;
@@ -410,30 +501,37 @@ div.code pre {
   text-transform: uppercase;
 }
 
+/* line 458, _sass/screen.scss */
 .archives-post-title {
   font-style: italic;
 }
 
+/* line 462, _sass/screen.scss */
 .archives-post-tags {
   color: #060606;
   font-size: 10px;
   text-transform: uppercase;
   word-spacing: 2px;
 }
+/* line 467, _sass/screen.scss */
 .archives-post-tags a {
   color: #282828;
 }
+/* line 469, _sass/screen.scss */
 .archives-post-tags a:hover {
   color: #186b4e;
 }
+/* line 473, _sass/screen.scss */
 .archives-post-tags span {
   position: relative;
   top: -1px;
 }
 
+/* line 480, _sass/screen.scss */
 .resume-image {
   text-align: center;
 }
+/* line 483, _sass/screen.scss */
 .resume-image img {
   max-width: 180px;
   max-height: 120px;

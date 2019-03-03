@@ -19,7 +19,7 @@ a:hover {
 #site-title {
     text-align: center;
     margin-top: 100px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     max-width: 100%;
 }
 
@@ -28,11 +28,5 @@ a:hover {
 }
 
 #social-icons {
-    font-size: 2em;
-}
-
-@media (max-width: 400px) {
-    #social-icons {
-        font-size: 3em;
-    }
+    font-size: 2.5em;
 }
