@@ -1,11 +1,12 @@
 
-.icon-rss:before { content: '\e800'; } /* '' */
-.icon-tumblr:before { content: '\e801'; } /* '' */
-.icon-github:before { content: '\e802'; } /* '' */
-.icon-linkedin:before { content: '\e803'; } /* '' */
+.icon-tumblr:before { content: '\e800'; } /* '' */
+.icon-github:before { content: '\e801'; } /* '' */
+.icon-linkedin:before { content: '\e802'; } /* '' */
+.icon-lastfm:before { content: '\e803'; } /* '' */
 .icon-meetup:before { content: '\e804'; } /* '' */
-.icon-lastfm:before { content: '\e805'; } /* '' */
-.icon-wordpress:before { content: '\e806'; } /* '' */
-.icon-twitter:before { content: '\e807'; } /* '' */
-.icon-lock:before { content: '\e808'; } /* '' */
-.icon-mail-alt:before { content: '\e809'; } /* '' */
+.icon-wordpress:before { content: '\e805'; } /* '' */
+.icon-twitter:before { content: '\e806'; } /* '' */
+.icon-lock:before { content: '\e807'; } /* '' */
+.icon-mail-alt:before { content: '\e808'; } /* '' */
+.icon-goodreads:before { content: '\e809'; } /* '' */
+.icon-rss:before { content: '\f09e'; } /* '' */
