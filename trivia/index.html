@@ -17,18 +17,20 @@
 
 
 {% macro gallery_link(post_id) %}
-
     {% for post in posts %}
         {% if post.id == post_id %}
             <a id="{{ post.id }}-gallery" title="{{ post.desc }}" href="{{ post.urlOverride or post.url }}"></a>
         {% endif %}
     {% endfor %}
-
 {% endmacro %}
 
 
 {% block main_content %}
 <div id="gallery" class="section">
+    {{ gallery_link('personality-test') }}
+    {{ gallery_link('court') }}
+    {{ gallery_link('arrest-powers') }}
+    {{ gallery_link('law-outlines') }}
     {{ gallery_link('autofriend') }}
     {{ gallery_link('tswift-tunes') }}
     {{ gallery_link('beepbeep') }}
@@ -47,4 +49,3 @@
     {{ gallery_link('stegasaurus') }}
 </div>
 {% endblock %}
-

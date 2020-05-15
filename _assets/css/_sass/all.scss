@@ -97,9 +97,24 @@ $gallery-link-border-radius: 6px;
     @include border-radius($gallery-link-border-radius);
 }
 
-#autofriend-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/like.jpg');
+#personality-test-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/personality-test.jpg');
+}
+
+#court-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/court.jpg');
+}
+
+#arrest-powers-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/arrest-powers.jpg');
+}
+
+#law-outlines-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/law-outlines.jpg');
 }
 
 #elm-of-life-gallery {
