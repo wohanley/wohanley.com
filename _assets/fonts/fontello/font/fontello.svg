@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2020 by original authors @ fontello.com</metadata>
 <defs>
 <font id="fontello" horiz-adv-x="1000" >
 <font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
@@ -27,6 +27,8 @@
 <glyph glyph-name="goodreads" unicode="&#xe809;" d="M464 629q5 5 15 12t47 26 83 35 127 27 175 12l0-670q-95 0-176-12t-128-27-82-34-47-29l-14-10q-4 4-13 12t-46 26-83 35-127 27-177 12l0 670q94 0 174-12t128-27 83-33 48-29z m-334 0l0-450q172-14 279-71l0 449q-110 58-279 72z m669-450l0 450q-168-14-278-72l0-449q108 57 278 71z" horiz-adv-x="928" />
 
 <glyph glyph-name="rss" unicode="&#xf09e;" d="M214 100q0-45-31-76t-76-31-76 31-31 76 31 76 76 31 76-31 31-76z m286-69q1-15-9-26-10-12-27-12h-75q-14 0-24 9t-11 23q-12 128-103 219t-219 103q-14 1-23 11t-9 24v75q0 16 12 26 9 10 24 10h3q89-7 170-45t145-101q63-63 101-145t45-171z m286-1q1-15-10-26-10-11-26-11h-80q-14 0-25 10t-10 23q-7 120-57 228t-129 188-188 129-227 57q-14 1-24 11t-10 24v80q0 16 11 26 10 10 25 10h1q147-8 280-67t238-164q104-104 164-238t67-280z" horiz-adv-x="785.7" />
+
+<glyph glyph-name="gitlab" unicode="&#xf296;" d="M58 456l442-566-484 351q-10 7-14 19t0 24l56 172z m258 0h368l-184-566z m-111 342l111-342h-258l111 342q4 12 18 12t18-12z m737-342l56-172q4-12 0-24t-14-19l-484-351 442 566z m0 0h-258l111 342q4 12 18 12t19-12z" horiz-adv-x="1000" />
 </font>
 </defs>
 </svg>
