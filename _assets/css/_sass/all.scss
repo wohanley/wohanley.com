@@ -97,6 +97,11 @@ $gallery-link-border-radius: 6px;
     @include border-radius($gallery-link-border-radius);
 }
 
+#document-automation-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/document-automation.png');
+}
+
 #personality-test-gallery {
   @extend .gallery-link;
   background-image: url('/assets/images/personality-test.jpg');

@@ -312,7 +312,7 @@ a:hover {
 }
 
 /* line 90, _sass/all.scss */
-.gallery-link, #personality-test-gallery, #court-gallery, #arrest-powers-gallery, #law-outlines-gallery, #elm-of-life-gallery, #stegasaurus-gallery, #elevators-gallery, #tears-gallery, #transcat-gallery, #oracle-gallery, #very-smart-gallery, #wiki-mapper-gallery, #dance-bot-gallery, #tswift-tunes-gallery, #beepbeep-gallery, #vigil-gallery {
+.gallery-link, #document-automation-gallery, #personality-test-gallery, #court-gallery, #arrest-powers-gallery, #law-outlines-gallery, #elm-of-life-gallery, #stegasaurus-gallery, #elevators-gallery, #tears-gallery, #transcat-gallery, #oracle-gallery, #very-smart-gallery, #wiki-mapper-gallery, #dance-bot-gallery, #tswift-tunes-gallery, #beepbeep-gallery, #vigil-gallery {
   display: inline-block;
   height: 170px;
   width: 170px;
@@ -326,45 +326,50 @@ a:hover {
 }
 
 /* line 100, _sass/all.scss */
+#document-automation-gallery {
+  background-image: url("/assets/images/document-automation.png");
+}
+
+/* line 105, _sass/all.scss */
 #personality-test-gallery {
   background-image: url("/assets/images/personality-test.jpg");
 }
 
-/* line 105, _sass/all.scss */
+/* line 110, _sass/all.scss */
 #court-gallery {
   background-image: url("/assets/images/court.jpg");
 }
 
-/* line 110, _sass/all.scss */
+/* line 115, _sass/all.scss */
 #arrest-powers-gallery {
   background-image: url("/assets/images/arrest-powers.jpg");
 }
 
-/* line 115, _sass/all.scss */
+/* line 120, _sass/all.scss */
 #law-outlines-gallery {
   background-image: url("/assets/images/law-outlines.jpg");
 }
 
-/* line 120, _sass/all.scss */
+/* line 125, _sass/all.scss */
 #elm-of-life-gallery {
   background-image: url("/assets/images/life.gif");
 }
 
-/* line 125, _sass/all.scss */
+/* line 130, _sass/all.scss */
 #stegasaurus-gallery {
   background-image: url("/assets/images/asteroids-steg.png");
 }
 
-/* line 130, _sass/all.scss */
+/* line 135, _sass/all.scss */
 #elevators-gallery {
   background-image: url("/assets/images/elevators.gif");
 }
 
-/* line 135, _sass/all.scss */
+/* line 140, _sass/all.scss */
 #tears-gallery {
   position: relative;
 }
-/* line 139, _sass/all.scss */
+/* line 144, _sass/all.scss */
 #tears-gallery #background, #tears-gallery #foreground {
   position: absolute;
   top: 0;
@@ -377,64 +382,64 @@ a:hover {
   border-radius: 6px;
 }
 
-/* line 149, _sass/all.scss */
+/* line 154, _sass/all.scss */
 #transcat-gallery {
   background-image: url("/assets/images/transcat.png");
 }
 
-/* line 154, _sass/all.scss */
+/* line 159, _sass/all.scss */
 #oracle-gallery {
   background-image: url("/assets/images/fortune.jpeg");
 }
 
-/* line 159, _sass/all.scss */
+/* line 164, _sass/all.scss */
 #very-smart-gallery {
   background-image: url("/assets/images/golfin.jpg");
 }
 
-/* line 164, _sass/all.scss */
+/* line 169, _sass/all.scss */
 #wiki-mapper-gallery {
   background-image: url("/assets/images/wall-map.png");
 }
 
-/* line 169, _sass/all.scss */
+/* line 174, _sass/all.scss */
 #dance-bot-gallery {
   background-image: url("/assets/images/dance-bot.png");
 }
 
-/* line 174, _sass/all.scss */
+/* line 179, _sass/all.scss */
 #tswift-tunes-gallery {
   background-image: url("/assets/images/tswift.jpg");
 }
 
-/* line 179, _sass/all.scss */
+/* line 184, _sass/all.scss */
 #beepbeep-gallery {
   background-image: url("/assets/images/response.png");
 }
 
-/* line 184, _sass/all.scss */
+/* line 189, _sass/all.scss */
 #vigil-gallery {
   background-image: url("/assets/images/vigil.png");
 }
 
-/* line 190, _sass/all.scss */
+/* line 195, _sass/all.scss */
 #small-worlds-screenshot {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 196, _sass/all.scss */
+/* line 201, _sass/all.scss */
 .fomus {
   margin-top: 4em;
 }
 
-/* line 200, _sass/all.scss */
+/* line 205, _sass/all.scss */
 .content-header {
   margin-bottom: 2em;
 }
 
-/* line 204, _sass/all.scss */
+/* line 209, _sass/all.scss */
 pre.prose {
   color: #ccc;
   background-color: #070710;
@@ -444,27 +449,27 @@ pre.prose {
   font-size: 1em;
 }
 
-/* line 213, _sass/all.scss */
+/* line 218, _sass/all.scss */
 .book-title {
   font-style: italic;
 }
 
-/* line 217, _sass/all.scss */
+/* line 222, _sass/all.scss */
 .resume-section {
   margin-top: 4rem;
 }
 
-/* line 221, _sass/all.scss */
+/* line 226, _sass/all.scss */
 .resume-section.bio {
   margin-top: 0.5rem;
 }
 
-/* line 225, _sass/all.scss */
+/* line 230, _sass/all.scss */
 .resume-section header {
   font-size: 1.5rem;
 }
 
-/* line 230, _sass/all.scss */
+/* line 235, _sass/all.scss */
 #intro {
   display: flex;
   flex-wrap: wrap;
@@ -473,39 +478,39 @@ pre.prose {
   margin-top: 2rem;
   margin-bottom: 15px;
 }
-/* line 238, _sass/all.scss */
+/* line 243, _sass/all.scss */
 #intro header {
   margin-top: 0;
   font-size: 3rem;
 }
-/* line 243, _sass/all.scss */
+/* line 248, _sass/all.scss */
 #intro h4 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-/* line 248, _sass/all.scss */
+/* line 253, _sass/all.scss */
 #intro .social-icons {
   text-align: initial;
 }
 
-/* line 253, _sass/all.scss */
+/* line 258, _sass/all.scss */
 #vitals {
   margin-right: 20px;
 }
 
-/* line 257, _sass/all.scss */
+/* line 262, _sass/all.scss */
 .resume-item {
   display: flex;
   margin-top: 3rem;
 }
-/* line 262, _sass/all.scss */
+/* line 267, _sass/all.scss */
 .resume-item h3 {
   display: flex;
   flex-direction: column;
   margin-top: 0;
   font-size: 1.3rem;
 }
-/* line 269, _sass/all.scss */
+/* line 274, _sass/all.scss */
 .resume-item .date {
   display: block;
   margin-top: 10px;
@@ -513,19 +518,19 @@ pre.prose {
   color: rgba(204, 204, 204, 0.6);
 }
 @media (min-width: 850px) {
-  /* line 277, _sass/all.scss */
+  /* line 282, _sass/all.scss */
   .resume-item h3 {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
   }
-  /* line 283, _sass/all.scss */
+  /* line 288, _sass/all.scss */
   .resume-item .date {
     display: initial;
     margin-top: 0;
   }
 }
-/* line 289, _sass/all.scss */
+/* line 294, _sass/all.scss */
 .resume-item .img-wrapper {
   display: none;
   flex: 0 0 180px;
@@ -533,17 +538,17 @@ pre.prose {
   text-align: center;
 }
 @media (min-width: 550px) {
-  /* line 297, _sass/all.scss */
+  /* line 302, _sass/all.scss */
   .resume-item .img-wrapper {
     display: initial;
   }
 }
-/* line 302, _sass/all.scss */
+/* line 307, _sass/all.scss */
 .resume-item .resume-img {
   max-width: 100%;
   max-height: 120px;
 }
-/* line 307, _sass/all.scss */
+/* line 312, _sass/all.scss */
 .resume-item .resume-content {
   flex-grow: 1;
 }

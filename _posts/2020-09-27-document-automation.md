@@ -3,7 +3,6 @@ id: document-automation
 title: Document Automation in British Columbia
 desc: Porting the Document Assembly Line to British Columbia
 layout: post.html
-urlOverride: /document-automation
 crumbs: [['home', '/'], ['trivia', '/trivia/'], ['document automation']]
 tags: [law, project]
 ---
@@ -11,7 +10,7 @@ tags: [law, project]
 Document Automation in British Columbia
 ---------------------------------------
 
-I'm starting a project this semester, as a course of directed studies at the University of Victoria Faculty of Law, to automate legal forms in a British Columbian or broader Canadian context. This post will explain the motivation for the project, what I hope to accomplish, and the means by which I'll be moving forward. If there are some legal forms that it would help you to have automated and that you think would be a good fit for the project, please [send me an email](mailto:%6De@woh%61%6E%6Cey.com).
+I'm starting a project this semester, as a course of directed studies at the University of Victoria Faculty of Law, to automate legal forms in a British Columbian or broader Canadian context. You can see the progress of this work [on GitHub](https://github.com/wohanley/docassemble-BCNoticeOfFamilyClaim). This post will explain the motivation for the project, what I hope to accomplish, and the means by which I'll be moving forward. If there are some legal forms that it would help you to have automated and that you think would be a good fit for the project, please [send me an email](mailto:%6De@woh%61%6E%6Cey.com).
 
 One of the areas I've been trying to explore, in my classes at UVic and my work at [ACE](http://www.uvicace.com), is the intersection of law, technology, and design. Canadian law is fundamentally technologically embodied, even if that technology is as old as writing and paper, and lawyers and law-adjacent workers have a responsibility to consider how well those technologies are serving the public. In the case of legal forms, which generally exist on paper or as flat, static PDFs buried on court websites, it is very often the case that this question has not received enough critical attention and work.
 
