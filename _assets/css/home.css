@@ -15,6 +15,16 @@ a:hover {
 }
 
 /* line 19, _sass/home.scss */
+a svg {
+  fill: #F00;
+}
+
+/* line 23, _sass/home.scss */
+a:hover svg {
+  fill: #FFF;
+}
+
+/* line 27, _sass/home.scss */
 #site-title {
   text-align: center;
   margin-top: 100px;
@@ -22,12 +32,12 @@ a:hover {
   max-width: 100%;
 }
 
-/* line 26, _sass/home.scss */
+/* line 34, _sass/home.scss */
 #sitemap {
   margin-bottom: 20px;
 }
 
-/* line 30, _sass/home.scss */
+/* line 38, _sass/home.scss */
 #social-icons {
   font-size: 2.5em;
 }

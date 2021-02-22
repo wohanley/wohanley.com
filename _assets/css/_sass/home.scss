@@ -16,6 +16,14 @@ a:hover {
     color: $hover-color;
 }
 
+a svg {
+  fill: $link-color;
+}
+
+a:hover svg {
+  fill: $hover-color;
+}
+
 #site-title {
     text-align: center;
     margin-top: 100px;

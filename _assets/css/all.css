@@ -262,18 +262,28 @@ a:hover {
 }
 
 /* line 44, _sass/all.scss */
+a svg {
+  fill: #3BD188;
+}
+
+/* line 48, _sass/all.scss */
+a:hover svg {
+  fill: #61FFB3;
+}
+
+/* line 52, _sass/all.scss */
 .title, .resume-section header {
   font-family: Roboto, Arial, sans-serif;
   font-weight: bold;
   color: #D16050;
 }
 
-/* line 50, _sass/all.scss */
+/* line 58, _sass/all.scss */
 #breadcrumbs {
   font-size: 0.9rem;
 }
 
-/* line 54, _sass/all.scss */
+/* line 62, _sass/all.scss */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -281,37 +291,43 @@ a:hover {
   flex-direction: column;
 }
 
-/* line 61, _sass/all.scss */
+/* line 69, _sass/all.scss */
 .section {
   margin-top: 20px;
   max-width: 100%;
 }
 
-/* line 66, _sass/all.scss */
+/* line 74, _sass/all.scss */
 .social-icons {
   font-size: 2.5rem;
   text-align: center;
 }
 
-/* line 71, _sass/all.scss */
+/* line 79, _sass/all.scss */
+svg.arena-logo {
+  width: 2.5rem;
+  margin: 0 5px;
+}
+
+/* line 84, _sass/all.scss */
 #breadcrumbs > span:after {
   content: "›";
   font-style: normal;
   padding: 0 6px 0 10px;
 }
 
-/* line 77, _sass/all.scss */
+/* line 90, _sass/all.scss */
 #breadcrumbs > span:last-child:after {
   content: none;
   padding: 0;
 }
 
-/* line 86, _sass/all.scss */
+/* line 99, _sass/all.scss */
 #gallery {
   text-align: center;
 }
 
-/* line 90, _sass/all.scss */
+/* line 103, _sass/all.scss */
 .gallery-link, #document-automation-gallery, #personality-test-gallery, #court-gallery, #arrest-powers-gallery, #law-outlines-gallery, #elm-of-life-gallery, #stegasaurus-gallery, #elevators-gallery, #tears-gallery, #transcat-gallery, #oracle-gallery, #very-smart-gallery, #wiki-mapper-gallery, #dance-bot-gallery, #tswift-tunes-gallery, #beepbeep-gallery, #vigil-gallery {
   display: inline-block;
   height: 170px;
@@ -325,51 +341,51 @@ a:hover {
   border-radius: 6px;
 }
 
-/* line 100, _sass/all.scss */
+/* line 113, _sass/all.scss */
 #document-automation-gallery {
   background-image: url("/assets/images/document-automation.png");
 }
 
-/* line 105, _sass/all.scss */
+/* line 118, _sass/all.scss */
 #personality-test-gallery {
   background-image: url("/assets/images/personality-test.jpg");
 }
 
-/* line 110, _sass/all.scss */
+/* line 123, _sass/all.scss */
 #court-gallery {
   background-image: url("/assets/images/court.jpg");
 }
 
-/* line 115, _sass/all.scss */
+/* line 128, _sass/all.scss */
 #arrest-powers-gallery {
   background-image: url("/assets/images/arrest-powers.jpg");
 }
 
-/* line 120, _sass/all.scss */
+/* line 133, _sass/all.scss */
 #law-outlines-gallery {
   background-image: url("/assets/images/law-outlines.jpg");
 }
 
-/* line 125, _sass/all.scss */
+/* line 138, _sass/all.scss */
 #elm-of-life-gallery {
   background-image: url("/assets/images/life.gif");
 }
 
-/* line 130, _sass/all.scss */
+/* line 143, _sass/all.scss */
 #stegasaurus-gallery {
   background-image: url("/assets/images/asteroids-steg.png");
 }
 
-/* line 135, _sass/all.scss */
+/* line 148, _sass/all.scss */
 #elevators-gallery {
   background-image: url("/assets/images/elevators.gif");
 }
 
-/* line 140, _sass/all.scss */
+/* line 153, _sass/all.scss */
 #tears-gallery {
   position: relative;
 }
-/* line 144, _sass/all.scss */
+/* line 157, _sass/all.scss */
 #tears-gallery #background, #tears-gallery #foreground {
   position: absolute;
   top: 0;
@@ -382,64 +398,64 @@ a:hover {
   border-radius: 6px;
 }
 
-/* line 154, _sass/all.scss */
+/* line 167, _sass/all.scss */
 #transcat-gallery {
   background-image: url("/assets/images/transcat.png");
 }
 
-/* line 159, _sass/all.scss */
+/* line 172, _sass/all.scss */
 #oracle-gallery {
   background-image: url("/assets/images/fortune.jpeg");
 }
 
-/* line 164, _sass/all.scss */
+/* line 177, _sass/all.scss */
 #very-smart-gallery {
   background-image: url("/assets/images/golfin.jpg");
 }
 
-/* line 169, _sass/all.scss */
+/* line 182, _sass/all.scss */
 #wiki-mapper-gallery {
   background-image: url("/assets/images/wall-map.png");
 }
 
-/* line 174, _sass/all.scss */
+/* line 187, _sass/all.scss */
 #dance-bot-gallery {
   background-image: url("/assets/images/dance-bot.png");
 }
 
-/* line 179, _sass/all.scss */
+/* line 192, _sass/all.scss */
 #tswift-tunes-gallery {
   background-image: url("/assets/images/tswift.jpg");
 }
 
-/* line 184, _sass/all.scss */
+/* line 197, _sass/all.scss */
 #beepbeep-gallery {
   background-image: url("/assets/images/response.png");
 }
 
-/* line 189, _sass/all.scss */
+/* line 202, _sass/all.scss */
 #vigil-gallery {
   background-image: url("/assets/images/vigil.png");
 }
 
-/* line 195, _sass/all.scss */
+/* line 208, _sass/all.scss */
 #small-worlds-screenshot {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 201, _sass/all.scss */
+/* line 214, _sass/all.scss */
 .fomus {
   margin-top: 4em;
 }
 
-/* line 205, _sass/all.scss */
+/* line 218, _sass/all.scss */
 .content-header {
   margin-bottom: 2em;
 }
 
-/* line 209, _sass/all.scss */
+/* line 222, _sass/all.scss */
 pre.prose {
   color: #ccc;
   background-color: #070710;
@@ -449,27 +465,27 @@ pre.prose {
   font-size: 1em;
 }
 
-/* line 218, _sass/all.scss */
+/* line 231, _sass/all.scss */
 .book-title {
   font-style: italic;
 }
 
-/* line 222, _sass/all.scss */
+/* line 235, _sass/all.scss */
 .resume-section {
   margin-top: 4rem;
 }
 
-/* line 226, _sass/all.scss */
+/* line 239, _sass/all.scss */
 .resume-section.bio {
   margin-top: 0.5rem;
 }
 
-/* line 230, _sass/all.scss */
+/* line 243, _sass/all.scss */
 .resume-section header {
   font-size: 1.5rem;
 }
 
-/* line 235, _sass/all.scss */
+/* line 248, _sass/all.scss */
 #intro {
   display: flex;
   flex-wrap: wrap;
@@ -478,39 +494,39 @@ pre.prose {
   margin-top: 2rem;
   margin-bottom: 15px;
 }
-/* line 243, _sass/all.scss */
+/* line 256, _sass/all.scss */
 #intro header {
   margin-top: 0;
   font-size: 3rem;
 }
-/* line 248, _sass/all.scss */
+/* line 261, _sass/all.scss */
 #intro h4 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-/* line 253, _sass/all.scss */
+/* line 266, _sass/all.scss */
 #intro .social-icons {
   text-align: initial;
 }
 
-/* line 258, _sass/all.scss */
+/* line 271, _sass/all.scss */
 #vitals {
   margin-right: 20px;
 }
 
-/* line 262, _sass/all.scss */
+/* line 275, _sass/all.scss */
 .resume-item {
   display: flex;
   margin-top: 3rem;
 }
-/* line 267, _sass/all.scss */
+/* line 280, _sass/all.scss */
 .resume-item h3 {
   display: flex;
   flex-direction: column;
   margin-top: 0;
   font-size: 1.3rem;
 }
-/* line 274, _sass/all.scss */
+/* line 287, _sass/all.scss */
 .resume-item .date {
   display: block;
   margin-top: 10px;
@@ -518,19 +534,19 @@ pre.prose {
   color: rgba(204, 204, 204, 0.6);
 }
 @media (min-width: 850px) {
-  /* line 282, _sass/all.scss */
+  /* line 295, _sass/all.scss */
   .resume-item h3 {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
   }
-  /* line 288, _sass/all.scss */
+  /* line 301, _sass/all.scss */
   .resume-item .date {
     display: initial;
     margin-top: 0;
   }
 }
-/* line 294, _sass/all.scss */
+/* line 307, _sass/all.scss */
 .resume-item .img-wrapper {
   display: none;
   flex: 0 0 180px;
@@ -538,17 +554,17 @@ pre.prose {
   text-align: center;
 }
 @media (min-width: 550px) {
-  /* line 302, _sass/all.scss */
+  /* line 315, _sass/all.scss */
   .resume-item .img-wrapper {
     display: initial;
   }
 }
-/* line 307, _sass/all.scss */
+/* line 320, _sass/all.scss */
 .resume-item .resume-img {
   max-width: 100%;
   max-height: 120px;
 }
-/* line 312, _sass/all.scss */
+/* line 325, _sass/all.scss */
 .resume-item .resume-content {
   flex-grow: 1;
 }
