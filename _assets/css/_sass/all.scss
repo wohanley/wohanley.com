@@ -14,16 +14,31 @@
 $section-margin-top: 20px;
 
 
-:root {
-    --color-bg: #FFF8E7;
-    --color-fg: #2F3337;
-    --color-fg-mute: #42474D;
-    --color-accent-hard: #E23C5D;
-    --color-accent-soft: #41B49D;
+/* resets */
 
-    --font-serif: "Coelacanth", "Georgia", "serif";
+cite {
+  font-style: normal;
+}
+
+cite a {
+  font-style: normal;
+}
+
+p + ul, p + ol {
+  margin-top: -1em;
+}
+
+
+:root {
+    --color-bg: #fffbf0;
+    --color-fg: #232629;
+    --color-fg-mute: #42474D;
+    --color-accent-hard: #de2147;
+    --color-accent-soft: #369683;
+
+    --font-serif: "Iowan Old Style", "Baskerville", "Georgia", "serif";
     --font-sans: "Alegreya Sans", "sans";
-    --font-mono: "Iosevka", "Monaco", "Courier New", "Courier", "monospace";
+    --font-mono: "Iosevka Web", "Monaco", "monospace";
     --font-title: var(--font-sans);
     --font-body: var(--font-sans);
 
@@ -32,19 +47,36 @@ $section-margin-top: 20px;
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-bg: #2F3337;
-        --color-fg: #FFF8E7;
-        --color-fg-mute: #FFEDC2;
-        --color-accent-hard: #69C9B6;
-        --color-accent-soft: #E75E79;
+        --color-bg: #232629;
+        --color-fg: #fffbf0;
+        --color-fg-mute: #e0dcd1;
+        --color-accent-hard: #6ef7dc;
+        --color-accent-soft: #ff6685;
     }
 }
 
+::selection {
+    background-color: var(--color-accent-hard);
+    color: var(--color-bg);
+}
+
 body {
+    margin: 0;
+    padding: 0 10px 30px 10px;
     font-family: var(--font-body);
     background-color: var(--color-bg);
     color: var(--color-fg);
-	  padding: 0 20px 30px 20px;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 0 0 30px 40px;
+    }
+}
+
+pre, code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem; /* Iosevka runs big */
 }
 
 a {
@@ -72,6 +104,46 @@ a:active svg {
     color: var(--color-accent-hard);
 }
 
+@media print {
+  a {
+    font-style: normal;
+  }
+}
+
+a.headline-anchor {
+  text-decoration: none;
+}
+
+a.headline-anchor::before {
+  content: "§";
+  margin-right: 0.3em;
+}
+
+@media (min-width: 768px) {
+  a.headline-anchor {
+    display: inline-block;
+    width: 40px;
+    margin-left: -40px;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+
+  a.headline-anchor::before {
+    margin-right: 0;
+  }
+}
+
+h1:target,
+h2:target,
+h3:target,
+h4:target,
+h5:target,
+h6:target {
+  color: var(--color-accent-hard);
+  font-weight: bold;
+}
+
 .title {
     font-weight: bold;
     color: var(--color-accent-hard);
@@ -93,7 +165,36 @@ a:active svg {
 
 .social-icons {
     font-size: 2.5rem;
+    margin-top: 2.5rem;
     text-align: center;
+
+    /* muted colors for links */
+
+    a {
+      color: var(--color-fg-mute);
+    }
+
+    a svg {
+      fill: var(--color-fg-mute);
+    }
+
+    /* repeat focus/hover/active styles to prevent override by nested plain style */
+
+    a:focus, a:hover {
+      color: var(--color-accent-soft);
+    }
+
+    a:active {
+      color: var(--color-accent-hard);
+    }
+
+    a:focus svg, a:hover svg {
+      fill: var(--color-accent-soft);
+    }
+
+    a:active svg {
+      color: var(--color-accent-hard);
+    }
 }
 
 svg.arena-logo {
@@ -127,6 +228,22 @@ svg.arena-logo {
 #breadcrumbs > span:last-child:after {
     content: none;
     padding: 0;
+}
+
+
+.notice {
+  background-color: var(--color-accent-soft);
+  margin-left: -40px;
+  padding: 10px 40px;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .notice {
+    color: black;
+  }
 }
 
 

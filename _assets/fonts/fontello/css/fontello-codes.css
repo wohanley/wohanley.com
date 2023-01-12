@@ -1,4 +1,6 @@
 
+.icon-sun:before { content: '\263c'; } /* '☼' */
+.icon-moon-inv:before { content: '\263e'; } /* '☾' */
 .icon-tumblr:before { content: '\e800'; } /* '' */
 .icon-github:before { content: '\e801'; } /* '' */
 .icon-linkedin:before { content: '\e802'; } /* '' */
@@ -10,4 +12,5 @@
 .icon-mail-alt:before { content: '\e808'; } /* '' */
 .icon-goodreads:before { content: '\e809'; } /* '' */
 .icon-rss:before { content: '\f09e'; } /* '' */
+.icon-sticky-note-o:before { content: '\f24a'; } /* '' */
 .icon-gitlab:before { content: '\f296'; } /* '' */

@@ -1,0 +1,1 @@
+These are just the CSS files copied from Fontello and renamed so that SCSS will treat them the way I want. Also some path adjustments (../font -> /font/fontello)

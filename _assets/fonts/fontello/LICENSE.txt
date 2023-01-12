@@ -1,13 +1,13 @@
 Font license info
 
 
-## Font Awesome
+## Typicons
 
-   Copyright (C) 2016 by Dave Gandy
+   (c) Stephen Hutchings 2012
 
-   Author:    Dave Gandy
-   License:   SIL ()
-   Homepage:  http://fortawesome.github.com/Font-Awesome/
+   Author:    Stephen Hutchings
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://typicons.com/
 
 
 ## Iconic
@@ -17,5 +17,14 @@ Font license info
    Author:    P.J. Onori
    License:   SIL (http://scripts.sil.org/OFL)
    Homepage:  http://somerandomdude.com/work/iconic/
+
+
+## Font Awesome
+
+   Copyright (C) 2016 by Dave Gandy
+
+   Author:    Dave Gandy
+   License:   SIL ()
+   Homepage:  http://fortawesome.github.com/Font-Awesome/
 
 

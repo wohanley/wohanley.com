@@ -117,6 +117,24 @@
       "css": "gitlab",
       "code": 62102,
       "src": "fontawesome"
+    },
+    {
+      "uid": "ivmsk67zo1yb1tthd3ugi4xnb3get418",
+      "css": "sun",
+      "code": 9788,
+      "src": "typicons"
+    },
+    {
+      "uid": "c2152732d525871cf35345955854f711",
+      "css": "moon-inv",
+      "code": 9790,
+      "src": "iconic"
+    },
+    {
+      "uid": "b9ca73befd583b2197a56a68045c9c0c",
+      "css": "sticky-note-o",
+      "code": 62026,
+      "src": "fontawesome"
     }
   ]
 }

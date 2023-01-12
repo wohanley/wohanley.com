@@ -2,11 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 @font-face {
   font-family: 'fontello';
-  src: url("/assets/fonts/fontello/font/fontello.eot?73647477");
-  src: url("/assets/fonts/fontello/font/fontello.eot?73647477#iefix") format("embedded-opentype"), url("/assets/fonts/fontello/font/fontello.woff2?73647477") format("woff2"), url("/assets/fonts/fontello/font/fontello.woff?73647477") format("woff"), url("/assets/fonts/fontello/font/fontello.ttf?73647477") format("truetype"), url("/assets/fonts/fontello/font/fontello.svg?73647477#fontello") format("svg");
+  src: url("/font/fontello/fontello.eot?71425568");
+  src: url("/font/fontello/fontello.eot?71425568#iefix") format("embedded-opentype"), url("/font/fontello/fontello.woff2?71425568") format("woff2"), url("/font/fontello/fontello.woff?71425568") format("woff"), url("/font/fontello/fontello.ttf?71425568") format("truetype"), url("/font/fontello/fontello.svg?71425568#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
@@ -14,11 +13,11 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?73647477#fontello') format('svg');
+    src: url('../font/fontello.svg?71425568#fontello') format('svg');
   }
 }
 */
-/* line 24, _sass/fontello/_fontello.scss */
+/* line 22, _sass/fontello/_fontello.scss */
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
@@ -47,209 +46,440 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-/* line 2, _sass/fontello/_fontello-codes.scss */
+/* line 57, _sass/fontello/_fontello.scss */
+.icon-sun:before {
+  content: '\263c';
+}
+
+/* '☼' */
+/* line 58, _sass/fontello/_fontello.scss */
+.icon-moon-inv:before {
+  content: '\263e';
+}
+
+/* '☾' */
+/* line 59, _sass/fontello/_fontello.scss */
 .icon-tumblr:before {
   content: '\e800';
 }
 
 /* '' */
-/* line 3, _sass/fontello/_fontello-codes.scss */
+/* line 60, _sass/fontello/_fontello.scss */
 .icon-github:before {
   content: '\e801';
 }
 
 /* '' */
-/* line 4, _sass/fontello/_fontello-codes.scss */
+/* line 61, _sass/fontello/_fontello.scss */
 .icon-linkedin:before {
   content: '\e802';
 }
 
 /* '' */
-/* line 5, _sass/fontello/_fontello-codes.scss */
+/* line 62, _sass/fontello/_fontello.scss */
 .icon-lastfm:before {
   content: '\e803';
 }
 
 /* '' */
-/* line 6, _sass/fontello/_fontello-codes.scss */
+/* line 63, _sass/fontello/_fontello.scss */
 .icon-meetup:before {
   content: '\e804';
 }
 
 /* '' */
-/* line 7, _sass/fontello/_fontello-codes.scss */
+/* line 64, _sass/fontello/_fontello.scss */
 .icon-wordpress:before {
   content: '\e805';
 }
 
 /* '' */
-/* line 8, _sass/fontello/_fontello-codes.scss */
+/* line 65, _sass/fontello/_fontello.scss */
 .icon-twitter:before {
   content: '\e806';
 }
 
 /* '' */
-/* line 9, _sass/fontello/_fontello-codes.scss */
+/* line 66, _sass/fontello/_fontello.scss */
 .icon-lock:before {
   content: '\e807';
 }
 
 /* '' */
-/* line 10, _sass/fontello/_fontello-codes.scss */
+/* line 67, _sass/fontello/_fontello.scss */
 .icon-mail-alt:before {
   content: '\e808';
 }
 
 /* '' */
-/* line 11, _sass/fontello/_fontello-codes.scss */
+/* line 68, _sass/fontello/_fontello.scss */
 .icon-goodreads:before {
   content: '\e809';
 }
 
 /* '' */
-/* line 12, _sass/fontello/_fontello-codes.scss */
+/* line 69, _sass/fontello/_fontello.scss */
 .icon-rss:before {
   content: '\f09e';
 }
 
 /* '' */
-/* line 13, _sass/fontello/_fontello-codes.scss */
+/* line 70, _sass/fontello/_fontello.scss */
+.icon-sticky-note-o:before {
+  content: '\f24a';
+}
+
+/* '' */
+/* line 71, _sass/fontello/_fontello.scss */
 .icon-gitlab:before {
   content: '\f296';
 }
 
 /* '' */
-/* line 17, _sass/all.scss */
+/* line 2, _sass/fontello/_fontello-codes.scss */
+.icon-sun:before {
+  content: '\263c';
+}
+
+/* '☼' */
+/* line 3, _sass/fontello/_fontello-codes.scss */
+.icon-moon-inv:before {
+  content: '\263e';
+}
+
+/* '☾' */
+/* line 4, _sass/fontello/_fontello-codes.scss */
+.icon-tumblr:before {
+  content: '\e800';
+}
+
+/* '' */
+/* line 5, _sass/fontello/_fontello-codes.scss */
+.icon-github:before {
+  content: '\e801';
+}
+
+/* '' */
+/* line 6, _sass/fontello/_fontello-codes.scss */
+.icon-linkedin:before {
+  content: '\e802';
+}
+
+/* '' */
+/* line 7, _sass/fontello/_fontello-codes.scss */
+.icon-lastfm:before {
+  content: '\e803';
+}
+
+/* '' */
+/* line 8, _sass/fontello/_fontello-codes.scss */
+.icon-meetup:before {
+  content: '\e804';
+}
+
+/* '' */
+/* line 9, _sass/fontello/_fontello-codes.scss */
+.icon-wordpress:before {
+  content: '\e805';
+}
+
+/* '' */
+/* line 10, _sass/fontello/_fontello-codes.scss */
+.icon-twitter:before {
+  content: '\e806';
+}
+
+/* '' */
+/* line 11, _sass/fontello/_fontello-codes.scss */
+.icon-lock:before {
+  content: '\e807';
+}
+
+/* '' */
+/* line 12, _sass/fontello/_fontello-codes.scss */
+.icon-mail-alt:before {
+  content: '\e808';
+}
+
+/* '' */
+/* line 13, _sass/fontello/_fontello-codes.scss */
+.icon-goodreads:before {
+  content: '\e809';
+}
+
+/* '' */
+/* line 14, _sass/fontello/_fontello-codes.scss */
+.icon-rss:before {
+  content: '\f09e';
+}
+
+/* '' */
+/* line 15, _sass/fontello/_fontello-codes.scss */
+.icon-sticky-note-o:before {
+  content: '\f24a';
+}
+
+/* '' */
+/* line 16, _sass/fontello/_fontello-codes.scss */
+.icon-gitlab:before {
+  content: '\f296';
+}
+
+/* '' */
+/* resets */
+/* line 19, _sass/all.scss */
+cite {
+  font-style: normal;
+}
+
+/* line 23, _sass/all.scss */
+cite a {
+  font-style: normal;
+}
+
+/* line 27, _sass/all.scss */
+p + ul, p + ol {
+  margin-top: -1em;
+}
+
+/* line 32, _sass/all.scss */
 :root {
-  --color-bg: #FFF8E7;
-  --color-fg: #2F3337;
+  --color-bg: #fffbf0;
+  --color-fg: #232629;
   --color-fg-mute: #42474D;
-  --color-accent-hard: #E23C5D;
-  --color-accent-soft: #41B49D;
-  --font-serif: "Coelacanth", "Georgia", "serif";
+  --color-accent-hard: #de2147;
+  --color-accent-soft: #369683;
+  --font-serif: "Iowan Old Style", "Baskerville", "Georgia", "serif";
   --font-sans: "Alegreya Sans", "sans";
-  --font-mono: "Iosevka", "Monaco", "Courier New", "Courier", "monospace";
+  --font-mono: "Iosevka Web", "Monaco", "monospace";
   --font-title: var(--font-sans);
   --font-body: var(--font-sans);
   line-height: 1.5;
 }
 
 @media (prefers-color-scheme: dark) {
-  /* line 34, _sass/all.scss */
+  /* line 49, _sass/all.scss */
   :root {
-    --color-bg: #2F3337;
-    --color-fg: #FFF8E7;
-    --color-fg-mute: #FFEDC2;
-    --color-accent-hard: #69C9B6;
-    --color-accent-soft: #E75E79;
+    --color-bg: #232629;
+    --color-fg: #fffbf0;
+    --color-fg-mute: #e0dcd1;
+    --color-accent-hard: #6ef7dc;
+    --color-accent-soft: #ff6685;
   }
 }
-/* line 43, _sass/all.scss */
+/* line 58, _sass/all.scss */
+::selection {
+  background-color: var(--color-accent-hard);
+  color: var(--color-bg);
+}
+
+/* line 63, _sass/all.scss */
 body {
+  margin: 0;
+  padding: 0 10px 30px 10px;
   font-family: var(--font-body);
   background-color: var(--color-bg);
   color: var(--color-fg);
-  padding: 0 20px 30px 20px;
 }
 
-/* line 50, _sass/all.scss */
+@media (min-width: 768px) {
+  /* line 72, _sass/all.scss */
+  body {
+    padding: 0 0 30px 40px;
+  }
+}
+/* line 77, _sass/all.scss */
+pre, code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  /* Iosevka runs big */
+}
+
+/* line 82, _sass/all.scss */
 a {
   color: unset;
   font-style: italic;
 }
 
-/* line 55, _sass/all.scss */
+/* line 87, _sass/all.scss */
 a:focus, a:hover {
   color: var(--color-accent-soft);
 }
 
-/* line 59, _sass/all.scss */
+/* line 91, _sass/all.scss */
 a:active {
   color: var(--color-accent-hard);
 }
 
-/* line 63, _sass/all.scss */
+/* line 95, _sass/all.scss */
 a svg {
   fill: var(--color-fg);
 }
 
-/* line 67, _sass/all.scss */
+/* line 99, _sass/all.scss */
 a:focus svg, a:hover svg {
   fill: var(--color-accent-soft);
 }
 
-/* line 71, _sass/all.scss */
+/* line 103, _sass/all.scss */
 a:active svg {
   color: var(--color-accent-hard);
 }
 
-/* line 75, _sass/all.scss */
+@media print {
+  /* line 108, _sass/all.scss */
+  a {
+    font-style: normal;
+  }
+}
+/* line 113, _sass/all.scss */
+a.headline-anchor {
+  text-decoration: none;
+}
+
+/* line 117, _sass/all.scss */
+a.headline-anchor::before {
+  content: "§";
+  margin-right: 0.3em;
+}
+
+@media (min-width: 768px) {
+  /* line 123, _sass/all.scss */
+  a.headline-anchor {
+    display: inline-block;
+    width: 40px;
+    margin-left: -40px;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+
+  /* line 132, _sass/all.scss */
+  a.headline-anchor::before {
+    margin-right: 0;
+  }
+}
+/* line 137, _sass/all.scss */
+h1:target,
+h2:target,
+h3:target,
+h4:target,
+h5:target,
+h6:target {
+  color: var(--color-accent-hard);
+  font-weight: bold;
+}
+
+/* line 147, _sass/all.scss */
 .title, .resume-section header {
   font-weight: bold;
   color: var(--color-accent-hard);
 }
 
-/* line 80, _sass/all.scss */
+/* line 152, _sass/all.scss */
 #breadcrumbs {
   font-size: 0.9rem;
 }
 
-/* line 84, _sass/all.scss */
+/* line 156, _sass/all.scss */
 .container {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* line 89, _sass/all.scss */
+/* line 161, _sass/all.scss */
 .section {
   margin-top: 20px;
   max-width: 100%;
 }
 
-/* line 94, _sass/all.scss */
+/* line 166, _sass/all.scss */
 .social-icons {
   font-size: 2.5rem;
+  margin-top: 2.5rem;
   text-align: center;
+  /* muted colors for links */
+  /* repeat focus/hover/active styles to prevent override by nested plain style */
+}
+/* line 173, _sass/all.scss */
+.social-icons a {
+  color: var(--color-fg-mute);
+}
+/* line 177, _sass/all.scss */
+.social-icons a svg {
+  fill: var(--color-fg-mute);
+}
+/* line 183, _sass/all.scss */
+.social-icons a:focus, .social-icons a:hover {
+  color: var(--color-accent-soft);
+}
+/* line 187, _sass/all.scss */
+.social-icons a:active {
+  color: var(--color-accent-hard);
+}
+/* line 191, _sass/all.scss */
+.social-icons a:focus svg, .social-icons a:hover svg {
+  fill: var(--color-accent-soft);
+}
+/* line 195, _sass/all.scss */
+.social-icons a:active svg {
+  color: var(--color-accent-hard);
 }
 
-/* line 99, _sass/all.scss */
+/* line 200, _sass/all.scss */
 svg.arena-logo {
   width: 2.5rem;
   margin: 0 5px;
 }
 
-/* line 106, _sass/all.scss */
+/* line 207, _sass/all.scss */
 .breadcrumb {
   font-size: 0.9rem;
 }
 
-/* line 110, _sass/all.scss */
+/* line 211, _sass/all.scss */
 .breadcrumb::after {
   content: "›";
   font-style: normal;
   padding: 0 6px 0 10px;
 }
 
-/* line 116, _sass/all.scss */
+/* line 217, _sass/all.scss */
 .breadcrumb:last-child::after {
   content: none;
   padding: 0;
 }
 
-/* line 121, _sass/all.scss */
+/* line 222, _sass/all.scss */
 #breadcrumbs > span:after {
   content: "›";
   font-style: normal;
   padding: 0 6px 0 10px;
 }
 
-/* line 127, _sass/all.scss */
+/* line 228, _sass/all.scss */
 #breadcrumbs > span:last-child:after {
   content: none;
   padding: 0;
 }
 
-/* line 136, _sass/all.scss */
+/* line 234, _sass/all.scss */
+.notice {
+  background-color: var(--color-accent-soft);
+  margin-left: -40px;
+  padding: 10px 40px;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* line 244, _sass/all.scss */
+  .notice {
+    color: black;
+  }
+}
+/* line 253, _sass/all.scss */
 #gallery {
   display: flex;
   flex-wrap: wrap;
@@ -257,7 +487,7 @@ svg.arena-logo {
   gap: 15px;
 }
 
-/* line 143, _sass/all.scss */
+/* line 260, _sass/all.scss */
 .gallery-link, #willopedia-gallery, #org-setup-gallery, #document-automation-gallery, #personality-test-gallery, #court-gallery, #arrest-powers-gallery, #law-outlines-gallery, #elm-of-life-gallery, #stegasaurus-gallery, #elevators-gallery, #tears-gallery, #transcat-gallery, #oracle-gallery, #very-smart-gallery, #wiki-mapper-gallery, #dance-bot-gallery, #tswift-tunes-gallery, #beepbeep-gallery, #vigil-gallery {
   height: 170px;
   width: 170px;
@@ -268,61 +498,61 @@ svg.arena-logo {
   border-radius: 6px;
 }
 
-/* line 150, _sass/all.scss */
+/* line 267, _sass/all.scss */
 #willopedia-gallery {
   background-image: url("/assets/images/gallery-willopedia.png");
 }
 
-/* line 155, _sass/all.scss */
+/* line 272, _sass/all.scss */
 #org-setup-gallery {
   background-image: url("/assets/images/gallery-graph.png");
 }
 
-/* line 160, _sass/all.scss */
+/* line 277, _sass/all.scss */
 #document-automation-gallery {
   background-image: url("/assets/images/document-automation.png");
 }
 
-/* line 165, _sass/all.scss */
+/* line 282, _sass/all.scss */
 #personality-test-gallery {
   background-image: url("/assets/images/personality-test.jpg");
 }
 
-/* line 170, _sass/all.scss */
+/* line 287, _sass/all.scss */
 #court-gallery {
   background-image: url("/assets/images/court.jpg");
 }
 
-/* line 175, _sass/all.scss */
+/* line 292, _sass/all.scss */
 #arrest-powers-gallery {
   background-image: url("/assets/images/arrest-powers.jpg");
 }
 
-/* line 180, _sass/all.scss */
+/* line 297, _sass/all.scss */
 #law-outlines-gallery {
   background-image: url("/assets/images/law-outlines.jpg");
 }
 
-/* line 185, _sass/all.scss */
+/* line 302, _sass/all.scss */
 #elm-of-life-gallery {
   background-image: url("/assets/images/life.gif");
 }
 
-/* line 190, _sass/all.scss */
+/* line 307, _sass/all.scss */
 #stegasaurus-gallery {
   background-image: url("/assets/images/asteroids-steg.png");
 }
 
-/* line 195, _sass/all.scss */
+/* line 312, _sass/all.scss */
 #elevators-gallery {
   background-image: url("/assets/images/elevators.gif");
 }
 
-/* line 200, _sass/all.scss */
+/* line 317, _sass/all.scss */
 #tears-gallery {
   position: relative;
 }
-/* line 204, _sass/all.scss */
+/* line 321, _sass/all.scss */
 #tears-gallery #background, #tears-gallery #foreground {
   position: absolute;
   top: 0;
@@ -335,64 +565,64 @@ svg.arena-logo {
   border-radius: 6px;
 }
 
-/* line 214, _sass/all.scss */
+/* line 331, _sass/all.scss */
 #transcat-gallery {
   background-image: url("/assets/images/transcat.png");
 }
 
-/* line 219, _sass/all.scss */
+/* line 336, _sass/all.scss */
 #oracle-gallery {
   background-image: url("/assets/images/fortune.jpeg");
 }
 
-/* line 224, _sass/all.scss */
+/* line 341, _sass/all.scss */
 #very-smart-gallery {
   background-image: url("/assets/images/golfin.jpg");
 }
 
-/* line 229, _sass/all.scss */
+/* line 346, _sass/all.scss */
 #wiki-mapper-gallery {
   background-image: url("/assets/images/wall-map.png");
 }
 
-/* line 234, _sass/all.scss */
+/* line 351, _sass/all.scss */
 #dance-bot-gallery {
   background-image: url("/assets/images/dance-bot.png");
 }
 
-/* line 239, _sass/all.scss */
+/* line 356, _sass/all.scss */
 #tswift-tunes-gallery {
   background-image: url("/assets/images/tswift.jpg");
 }
 
-/* line 244, _sass/all.scss */
+/* line 361, _sass/all.scss */
 #beepbeep-gallery {
   background-image: url("/assets/images/response.png");
 }
 
-/* line 249, _sass/all.scss */
+/* line 366, _sass/all.scss */
 #vigil-gallery {
   background-image: url("/assets/images/vigil.png");
 }
 
-/* line 255, _sass/all.scss */
+/* line 372, _sass/all.scss */
 #small-worlds-screenshot {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 261, _sass/all.scss */
+/* line 378, _sass/all.scss */
 .fomus {
   margin-top: 4em;
 }
 
-/* line 265, _sass/all.scss */
+/* line 382, _sass/all.scss */
 .content-header {
   margin-bottom: 2em;
 }
 
-/* line 269, _sass/all.scss */
+/* line 386, _sass/all.scss */
 pre.prose {
   color: var(--color-fg);
   background-color: var(--color-bg);
@@ -402,38 +632,38 @@ pre.prose {
   font-size: 1em;
 }
 
-/* line 278, _sass/all.scss */
+/* line 395, _sass/all.scss */
 .book-title {
   font-style: italic;
 }
 
-/* line 282, _sass/all.scss */
+/* line 399, _sass/all.scss */
 .resume-section {
   margin-top: 4rem;
 }
 
-/* line 286, _sass/all.scss */
+/* line 403, _sass/all.scss */
 #intro.resume-section {
   display: flex;
   align-items: center;
 }
 
-/* line 291, _sass/all.scss */
+/* line 408, _sass/all.scss */
 .resume-section .social-icons {
   color: var(--color-fg-mute);
 }
 
-/* line 295, _sass/all.scss */
+/* line 412, _sass/all.scss */
 .resume-section.bio {
   margin-top: 0.5rem;
 }
 
-/* line 299, _sass/all.scss */
+/* line 416, _sass/all.scss */
 .resume-section header {
   font-size: 2rem;
 }
 
-/* line 304, _sass/all.scss */
+/* line 421, _sass/all.scss */
 #intro {
   display: flex;
   flex-wrap: wrap;
@@ -442,39 +672,39 @@ pre.prose {
   margin-top: 2rem;
   margin-bottom: 15px;
 }
-/* line 312, _sass/all.scss */
+/* line 429, _sass/all.scss */
 #intro header {
   margin-top: 0;
   font-size: 3rem;
 }
-/* line 317, _sass/all.scss */
+/* line 434, _sass/all.scss */
 #intro h4 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-/* line 322, _sass/all.scss */
+/* line 439, _sass/all.scss */
 #intro .social-icons {
   text-align: initial;
 }
 
-/* line 327, _sass/all.scss */
+/* line 444, _sass/all.scss */
 #vitals {
   margin-right: 20px;
 }
 
-/* line 331, _sass/all.scss */
+/* line 448, _sass/all.scss */
 .resume-item {
   display: flex;
   margin-top: 3rem;
 }
-/* line 336, _sass/all.scss */
+/* line 453, _sass/all.scss */
 .resume-item h3 {
   display: flex;
   flex-direction: column;
   margin-top: 0;
   font-size: 1.3rem;
 }
-/* line 343, _sass/all.scss */
+/* line 460, _sass/all.scss */
 .resume-item .date {
   display: block;
   margin-top: 10px;
@@ -482,19 +712,19 @@ pre.prose {
   color: var(--color-fg-mute);
 }
 @media (min-width: 850px) {
-  /* line 351, _sass/all.scss */
+  /* line 468, _sass/all.scss */
   .resume-item h3 {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
   }
-  /* line 357, _sass/all.scss */
+  /* line 474, _sass/all.scss */
   .resume-item .date {
     display: initial;
     margin-top: 0;
   }
 }
-/* line 363, _sass/all.scss */
+/* line 480, _sass/all.scss */
 .resume-item .img-wrapper {
   display: none;
   flex: 0 0 180px;
@@ -502,17 +732,17 @@ pre.prose {
   text-align: center;
 }
 @media (min-width: 550px) {
-  /* line 371, _sass/all.scss */
+  /* line 488, _sass/all.scss */
   .resume-item .img-wrapper {
     display: initial;
   }
 }
-/* line 376, _sass/all.scss */
+/* line 493, _sass/all.scss */
 .resume-item .resume-img {
   max-width: 100%;
   max-height: 120px;
 }
-/* line 381, _sass/all.scss */
+/* line 498, _sass/all.scss */
 .resume-item .resume-content {
   flex-grow: 1;
 }
