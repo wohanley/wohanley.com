@@ -1,0 +1,86 @@
+[settings]
+  strict = true # stop on error
+  verbose = true
+  debug = false
+
+  site_dir = "src/posts"
+  build_dir = "gen/posts"
+
+  # Other extensions are static assets and copied to gen unchanged
+  page_file_extensions = ["htm", "html", "md", "rst", "adoc"]
+
+  ignore_extensions = ["draft"]
+
+  # Treat files as content to insert in the template, unless they have an <html>
+  # element in them.
+  generator_mode = false
+  # complete_page_selector = "html"
+  # default_template_file = "templates/main.html"
+
+  # Set the document type to HTML5, unless the page already has a doctype
+  # declaration.
+  doctype = "<!DOCTYPE html>"
+  keep_doctype = true
+
+  pretty_print_html = false
+
+  # Translate site/about.html to build/about/index.html
+  # If set to false, then site/about.html will become build/about.html
+  clean_urls = true
+
+  plugin_discovery = true
+  plugin_dirs = ["plugins"]
+
+[widgets.head]
+  widget = "include"
+  selector = "head"
+  action = "prepend_child"
+  file = "src/templates/head.html"
+
+[widgets.title]
+  widget = "title"
+  append = " ⋮ William O'Hanley"
+  default = "William O'Hanley"
+  force = true
+  keep = true
+
+[widgets.footnote]
+  widget = "wrap"
+  selector = ".footnote"
+  wrapper = """<span class="footnote__wrapper"><span class="footnote__anchor"></span><span class="footnote__content"></span></span>"""
+  wrapper_selector = ".footnote__content"
+
+[widgets.toc]
+  widget = "toc"
+  selector = "#toc"
+
+  # ignore some headings
+  ignore_heading_selectors = ["h1", "#toc h3"]
+
+  min_level = 2
+  max_level = 3
+
+  # append heading level to class for toc items
+  toc_class_levels = true
+
+  heading_links = true
+  heading_link_text = ""
+  heading_link_class = "headline-anchor"
+
+[widgets.social-icons]
+  widget = "include"
+  selector = "body"
+  file = "src/templates/social-icons.html"
+
+# [widgets.breadcrumbs]
+#   widget = "breadcrumbs"
+#   selector = "#breadcrumbs"
+#   breadcrumb_template = """<a href="{{url}}">{{name}}</a>"""
+#   between = " / "
+
+[widgets.lang]
+  widget = "lang"
+
+# toc does this better
+# [widgets.self-anchor]
+#   widget = "self-anchor"

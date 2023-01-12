@@ -1,0 +1,282 @@
+:root {
+  font-size: 16px;
+
+  --main-content-width: 80rem;
+  --toc-width: 200px;
+}
+
+/* utilities */
+
+.highlight__k {
+  color: var(--color-accent-hard);
+}
+
+/* vertical-align: super borks line-height, so use this instead */
+/* styles repeated in footnote components */
+.super {
+  font-size: 0.8em;
+  top: -0.5em;
+  position: relative;
+}
+
+#breadcrumbs {
+  margin-top: 10px;
+  line-height: calc(2.3rem * 1.5);
+}
+
+#breadcrumbs .breadcrumb:last-child::after {
+  content: "›";
+  padding: 0 6px 0 10px;
+}
+
+@media (min-width: 1200px) {
+  #breadcrumbs {
+    float: left;
+    margin: 0;
+  }
+}
+
+@media print {
+  #breadcrumbs {
+    display: none;
+  }
+
+  article header h1 {
+    margin-top: 20px;
+  }
+}
+
+/* main content/footnotes layout */
+
+article header {
+  margin-bottom: 1.5rem;
+}
+
+.main-content {
+  max-width: var(--main-content-width);
+}
+
+article header h1 {
+  font-size: 2.3rem;
+  font-family: var(--font-title);
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+@media (min-width: 1200px) {
+  article header h1 {
+    margin-top: 20px;
+  }
+}
+
+article header .subtitle {
+  color: var(--color-fg-mute);
+}
+
+article header .subtitle :not(:last-child)::after {
+  content: "⋮";
+  margin: 0 0.5em;
+}
+
+#toc h3 {
+  margin-bottom: 0;
+}
+
+#toc ul {
+  margin: 0;
+}
+
+#toc li {
+  margin-top: 0.5em;
+}
+
+#toc li a:target {
+  color: var(--color-accent-hard);
+  font-weight: bold;
+}
+
+h2, h3, h4, p, pre, ul, ol {
+  width: calc(100vw - 40px);
+}
+
+@media print, (min-width: 768px) {
+  article header {
+    max-width: var(--main-content-width);
+    margin: 0 auto;
+  }
+
+  .main-content {
+    max-width: var(--main-content-width);
+    margin: 0 auto;
+  }
+
+  h2, h3, h4, p, pre, ul, ol {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #toc {
+    float: left;
+    max-width: var(--toc-width);
+    margin-left: calc(var(--toc-width) * -1 - 30px);
+    position: sticky;
+    top: 40px;
+  }
+
+  #toc h3 {
+    margin-top: 0;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+
+  #toc ul {
+    padding-left: 20px;
+  }
+
+  article header {
+    margin-left: calc(var(--toc-width) + 30px);
+  }
+
+  .main-content {
+    margin-left: calc(var(--toc-width) + 30px);
+  }
+}
+
+ul, ol {
+  box-sizing: border-box;
+}
+
+:root {
+  counter-reset: footnote-counter 0;
+}
+
+.footnote__anchor {
+  counter-increment: footnote-counter;
+  color: var(--color-accent-soft);
+}
+
+.footnote__anchor::before {
+  content: counter(footnote-counter);
+  font-size: 0.8em;
+  position: relative;
+  top: -0.5em;
+}
+
+.footnote__content {
+  display: flex;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
+  float: right;
+  clear: right;
+  width: 50%;
+  vertical-align: baseline;
+  position: relative;
+  margin: 0 -65% 1rem 0;
+  line-height: 1.3;
+  color: var(--color-fg-mute);
+  break-inside: avoid; /* for printing */
+}
+
+@media print, (min-width: 768px) {
+  .footnote__content {
+    margin: 0 -60% 1rem 0;
+  }
+}
+
+.footnote__content::before {
+  content: counter(footnote-counter);
+  position: absolute;
+  font-size: 0.8em;
+  width: 1em;
+  margin-left: -1.2em;
+  top: -0.5em;
+  text-align: right;
+  color: var(--color-accent-soft);
+}
+
+@media screen and (max-width: 767px) {
+  .footnote__anchor::after {
+    content: "☞";
+    font-size: 2em;
+    position: absolute;
+    right: 0;
+  }
+}
+
+article p:last-of-type::after {
+  content: " ☼";
+  font-family: sans, "fontello";
+  font-weight: bold;
+  color: var(--color-accent-hard);
+}
+
+@media (prefers-color-scheme: dark) {
+  article p:last-of-type::after {
+    content: " ⏾";
+  }
+}
+
+/* figures and blockquotes (with hanging quotes) */
+
+figure {
+  width: 100%;
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+@media print, (min-width: 768px) {
+  figure {
+    width: 60%;
+    padding-right: 0;
+  }
+
+  figure.full-width {
+    width: 100%;
+    padding-right: 50px;
+  }
+}
+
+figure code {
+  display: block;
+  line-height: 1.4;
+}
+
+figure blockquote  {
+  display: inline;
+  margin: 0;
+}
+
+figure video {
+  width: 100%;
+}
+
+figcaption {
+  display: inline;
+}
+
+blockquote + figcaption {
+  margin-left: 0.4em;
+}
+
+figcaption {
+  color: var(--color-fg-mute);
+}
+
+blockquote::before {
+  content: "“";
+  position: absolute;
+  width: 0.5em;
+  margin-left: -0.5em;
+  text-align: right;
+}
+
+blockquote::after {
+  content: "”";
+  position: absolute;
+  width: 0.5em;
+  margin-right: -0.5em;
+  text-align: left;
+}

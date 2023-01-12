@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./essay.css" type="text/css"/>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1>Visual propositional logic with yscript</h1>
+        <time datetime="2023-01-15">15 January 2023</time>
+      </header>
+      <p>I've been puttering for a while with a <a href="https://github.com/codexstanford/vscode-yscript">VS Code extension</a> for yscript, and I wanted to talk a bit about my motivations, yscript, and the technicalities of my project. This post is a companion to my short talk at <a href="https://popl23.sigplan.org/home/prolala-2023#program">ProLaLa 2023</a>.</p>
+      <h2>yscript</h2>
+      <p>yscript is
+        <figure>
+          <blockquote>a computer language for representing and manipulating propositions. It can be used to represent real-world rules such as legislation or codes of practice. […] When yscript code is executed, it results in a dialog or consultation. A series of questions are asked, and conclusions are made.</blockquote>
+          <figcaption><cite class="footnote">Andrew Mowbray, <i>Coding in yscript: A Description of the yscript Language</i> (Australasian Legal Information Institute, 2007), <a href="https://austlii.community/foswiki/pub/DataLex/WebHome/ys-manual.pdf">https://austlii.community/foswiki/pub/DataLex/WebHome/ys-manual.pdf</a>.</cite></figcaption>
+        </figure>
+      </p>
+      <p>It looks like this:</p>
+      <figure>
+        <pre><code><span class="highlight__k">RULE</span> take an umbrella <span class="highlight__k">PROVIDES</span>
+  you should take an umbrella <span class="highlight__k">ONLY IF</span>
+    you have an umbrella <span class="highlight__k">AND</span>
+    you might need an umbrella</code></pre>
+      </figure>
+      <p>yscript is developed by Andrew Mowbray at <abbr title="Australasian Legal Information Institute">AustLII</abbr> as part of AustLII's <a href="https://austlii.community/wiki/DataLex/">DataLex</a>, a broader toolkit for rule-based legal AI. Beyond yscript, DataLex also includes tools for running dialogs through a friendly chat interface, automatically processing legislation into “first-cut” yscript code, visually cross-referencing facts, and more cool stuff.<span class="footnote">DataLex has good ideas, and a lot of what I'm trying to do is to just tighten the feedback loop on things DataLex does already.</span></p>
+      <p>
+        For this project, we deal with a relatively small subset of yscript:
+        <ul>
+          <li>A yscript program is a list of <em>rules</em>. Rules have names, which are fragments of natural language called “descriptors”.</li>
+          <li>Rules contain lists of <em>statements</em>, which are either <code>IF THEN</code> or <code>ONLY IF</code>. For our purposes these correspond roughly to unidirectional and bidirectional implication, respectively.</li>
+          <li>Statements are composed of boolean expressions over <em>facts</em>, which are logical propositions. Facts, like rules, are named by descriptors.</li>
+        </ul>
+      </p>
+      <p>Recall that execution of a yscript program results in a dialog. The dialog begins with a rule declared as a <code>GOAL</code>, or the first rule in the program if no <code>GOAL</code> exists. Each statement in the rule is executed in order. If a fact is encountered that has no recorded value, the user will be asked to provide one. After the user answers a question, if the new fact provides enough information to infer additional facts, those inferences are made. Evaluation then <strong>restarts from the beginning</strong>,<cite class="footnote"><i>Coding in yscript</i>, 73.</cite> which means we don't need to worry about retractions. yscript also doesn't allow recursion,<cite class="footnote"><i>Coding in yscript</i>, 77.</cite> so negation semantics are simple.</p>
+
+      <h2>Justification and understanding</h2>
+      <p><em>Explainability</em> is a bullet point you'll find on the website of any self-respecting system for computational legal reasoning. I find it hard to disagree with the idea that we ought to be able to explain the findings of this kind of system. But I do get the feeling that even though we've agreed on a label in “explanation”, we don't actually agree widely on what it means. I think of my own project here as directed at least in part at the idea of explainability, so I want to be clear on what I mean by it, and what I think it doesn't address.</p>
+      <p>Daniel Wilkenfeld has a definition of explanation that I like:<cite class="footnote">Daniel A. Wilkenfeld, “Functional Explaining: A New Approach to the Philosophy of Explanation,” <i>Synthese</i> 191, no. 14 (September 1, 2014): 3367–91, <a href="https://doi.org/10.1007/s11229-014-0452-z">https://doi.org/10.1007/s11229-014-0452-z</a>.</cite></p>
+      <ol>
+        <li>To explain X is to intentionally produce a representation of X that, when internalized by the audience, produces improved understanding of X.</li>
+        <li>Whether a representation suffices for understanding is determined by what the understander can do with that representation in contextually relevant counterfactuals.</li>
+      </ol>
+      <p>So understanding is constitutive of explanation: to count as an explanation, it has to improve understanding. We consider understanding to be constituted by internalized representations which are useful. Useful representations help you to do something, e.g. make predictions, <em>when circumstances meaningfully change</em> (that is, in “contextually relevant counterfactuals”).</p>
+      <p>This is, to my mind, a helpful definition of explanation.<span class="footnote">A useful representation of explanation, even.</span> But the concept needs some extra colour in the domain of legal reasoning, where we aren't (or shouldn't be) concerned so much with correctness or prediction as <em>judgment</em>. Some insight emerges from the <abbr title="Legal Knowledge Interchange Format">LKIF</abbr> and Carneades projects on this point:<cite class="footnote">Thomas F. Gordon, “Constructing Legal Arguments with Rules in the Legal Knowledge Interchange Format (LKIF),” in <i>Computable Models of the Law: Languages, Dialogues, Games, Ontologies</i> (Berlin, Heidelberg: Springer-Verlag, 2008), 162–84, <a href="https://doi.org/10.1007/978-3-540-85569-9_11">https://doi.org/10.1007/978-3-540-85569-9_11</a>.</cite></p>
+      <ul>
+        <li>“[…] legal reasoning cannot be viewed, in general, as the application of some deductive logic, such as first-order predicate logic, to some theory of the facts and relevant legal domain.”</li>
+        <li>“Legal rules are neither material implications nor procedures for updating variables in working memory, but rather schemes for constructing legal arguments.”</li>
+      </ul>
+      <p>For law, the issue isn't merely explanation but <em>justification</em>. Law is not about taking facts as input, applying immutable rules, and producing correct conclusions as output. It is precisely the lack of exact logic that makes it work: argument, judgment, and contestation are foundational to rule of law.<span class="footnote">A critique of computational legalism is in <cite>Laurence Diver, “Digisprudence: The Design of Legitimate Code,” <i>Law, Innovation and Technology</i> 13, no. 2 (July 3, 2021): 325–54, <a href="https://doi.org/10.1080/17579961.2021.1977217">https://doi.org/10.1080/17579961.2021.1977217</a>.</cite></span> The thing we want our systems to explain isn't so much the logical validity of a particular legal finding (which usually isn't even provable per se), it's the structure of the space of potential arguments.</p>
+      <p>It's a little bit helpful to be told that <i>q</i> must be true because <i>p</i> is true and <i>p</i> implies <i>q</i>. It is much more helpful to be told that:</p>
+      <ul>
+        <li><i>p</i> also implies <i>r</i> (which you didn't know you should ask about).</li>
+        <li>Even if <i>p</i> were false, <i>s</i> (which you didn't know existed) also implies <i>q</i>, so you could try that instead.</li>
+        <li>There are ways to show <i>t</i> (which is the thing you actually need to demonstrate, although you didn't know that), without needing to say anything about <i>q</i>.</li>
+      </ul>
+      <p>This is the holistic kind of explanation, raising relevant counterfactuals, that we expect from lawyers, and it's the kind of explanation we really ought to expect from our computational systems as well.</p>
+
+      <h2>Visual yscript</h2>
+      <p>Declarative code lends itself nicely to visualization. For logic programs in particular, the classic nodes + wires approach is convenient:</p>
+      <figure></figure>
+      <p>We get the wires for free! It's easy to analyze a logic program and figure out the dependencies between rules - that's the whole idea.<span class="footnote">This is also easy for predicate logic, and I've <a href="https://github.com/codexstanford/vscode-epilog">done it</a> for <a href="http://epilog.stanford.edu/homepage/index.php">Epilog</a>, but I want to stick with propositions for now.</span> Plot your rules along such a dependency graph and hey presto.</p>
+
+
+    </article>
+  </body>
+</html>
