@@ -1,0 +1,503 @@
+@charset "utf-8";
+
+@import 'fontello/fontello';
+@import 'fontello/fontello-codes';
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
+$section-margin-top: 20px;
+
+
+/* resets */
+
+cite {
+  font-style: normal;
+}
+
+cite a {
+  font-style: normal;
+}
+
+p + ul, p + ol {
+  margin-top: -1em;
+}
+
+
+:root {
+    --color-bg: #fffbf0;
+    --color-fg: #232629;
+    --color-fg-mute: #42474D;
+    --color-accent-hard: #de2147;
+    --color-accent-soft: #369683;
+
+    --font-serif: "Iowan Old Style", "Baskerville", "Georgia", "serif";
+    --font-sans: "Alegreya Sans", "sans";
+    --font-mono: "Iosevka Web", "Monaco", "monospace";
+    --font-title: var(--font-sans);
+    --font-body: var(--font-sans);
+
+    line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #232629;
+        --color-fg: #fffbf0;
+        --color-fg-mute: #e0dcd1;
+        --color-accent-hard: #6ef7dc;
+        --color-accent-soft: #ff6685;
+    }
+}
+
+::selection {
+    background-color: var(--color-accent-hard);
+    color: var(--color-bg);
+}
+
+body {
+    margin: 0;
+    padding: 0 10px 30px 10px;
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 0 0 30px 40px;
+    }
+}
+
+pre, code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem; /* Iosevka runs big */
+}
+
+a {
+    color: unset;
+    font-style: italic;
+}
+
+a:focus, a:hover {
+    color: var(--color-accent-soft);
+}
+
+a:active {
+    color: var(--color-accent-hard);
+}
+
+a svg {
+    fill: var(--color-fg);
+}
+
+a:focus svg, a:hover svg {
+    fill: var(--color-accent-soft);
+}
+
+a:active svg {
+    color: var(--color-accent-hard);
+}
+
+@media print {
+  a {
+    font-style: normal;
+  }
+}
+
+a.headline-anchor {
+  text-decoration: none;
+}
+
+a.headline-anchor::before {
+  content: "§";
+  margin-right: 0.3em;
+}
+
+@media (min-width: 768px) {
+  a.headline-anchor {
+    display: inline-block;
+    width: 40px;
+    margin-left: -40px;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+
+  a.headline-anchor::before {
+    margin-right: 0;
+  }
+}
+
+h1:target,
+h2:target,
+h3:target,
+h4:target,
+h5:target,
+h6:target {
+  color: var(--color-accent-hard);
+  font-weight: bold;
+}
+
+.title {
+    font-weight: bold;
+    color: var(--color-accent-hard);
+}
+
+#breadcrumbs {
+    font-size: 0.9rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section {
+    margin-top: $section-margin-top;
+    max-width: 100%;
+}
+
+.social-icons {
+    font-size: 2.5rem;
+    margin-top: 2.5rem;
+    text-align: center;
+
+    /* muted colors for links */
+
+    a {
+      color: var(--color-fg-mute);
+    }
+
+    a svg {
+      fill: var(--color-fg-mute);
+    }
+
+    /* repeat focus/hover/active styles to prevent override by nested plain style */
+
+    a:focus, a:hover {
+      color: var(--color-accent-soft);
+    }
+
+    a:active {
+      color: var(--color-accent-hard);
+    }
+
+    a:focus svg, a:hover svg {
+      fill: var(--color-accent-soft);
+    }
+
+    a:active svg {
+      color: var(--color-accent-hard);
+    }
+}
+
+svg.arena-logo {
+  width: 2.5rem;
+  margin: 0 5px; // not sure why this is necessary, weird whitespace between the other icons
+}
+
+// Make-based SSG and Mynt produce breadcrumbs slightly differently
+
+.breadcrumb {
+    font-size: 0.9rem;
+}
+
+.breadcrumb::after {
+    content: "›";
+    font-style: normal;
+    padding: 0 6px 0 10px;
+}
+
+.breadcrumb:last-child::after {
+    content: none;
+    padding: 0;
+}
+
+#breadcrumbs > span:after {
+    content: "›";
+    font-style: normal;
+    padding: 0 6px 0 10px;
+}
+
+#breadcrumbs > span:last-child:after {
+    content: none;
+    padding: 0;
+}
+
+
+.notice {
+  background-color: var(--color-accent-soft);
+  margin-left: -40px;
+  padding: 10px 40px;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .notice {
+    color: black;
+  }
+}
+
+
+$gallery-link-size: 170px;
+$gallery-link-border-radius: 6px;
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery-link {
+    height: $gallery-link-size;
+    width: $gallery-link-size;
+    background-size: $gallery-link-size $gallery-link-size;
+    @include border-radius($gallery-link-border-radius);
+}
+
+#willopedia-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/gallery-willopedia.png');
+}
+
+#org-setup-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/gallery-graph.png');
+}
+
+#document-automation-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/document-automation.png');
+}
+
+#personality-test-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/personality-test.jpg');
+}
+
+#court-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/court.jpg');
+}
+
+#arrest-powers-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/arrest-powers.jpg');
+}
+
+#law-outlines-gallery {
+  @extend .gallery-link;
+  background-image: url('/assets/images/law-outlines.jpg');
+}
+
+#elm-of-life-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/life.gif');
+}
+
+#stegasaurus-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/asteroids-steg.png');
+}
+
+#elevators-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/elevators.gif');
+}
+
+#tears-gallery {
+    @extend .gallery-link;
+    position: relative;
+
+    #background, #foreground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $gallery-link-size;
+        width: $gallery-link-size;
+        @include border-radius($gallery-link-border-radius)
+    }
+}
+
+#transcat-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/transcat.png');
+}
+
+#oracle-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/fortune.jpeg');
+}
+
+#very-smart-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/golfin.jpg');
+}
+
+#wiki-mapper-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/wall-map.png')
+}
+
+#dance-bot-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/dance-bot.png')
+}
+
+#tswift-tunes-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/tswift.jpg')
+}
+
+#beepbeep-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/response.png')
+}
+
+#vigil-gallery {
+    @extend .gallery-link;
+    background-image: url('/assets/images/vigil.png')
+}
+
+
+#small-worlds-screenshot {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fomus {
+    margin-top: 4em;
+}
+
+.content-header {
+    margin-bottom: 2em;
+}
+
+pre.prose {
+    color: var(--color-fg);
+    background-color: var(--color-bg);
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+.book-title {
+    font-style: italic;
+}
+
+.resume-section {
+    margin-top: 4rem;
+}
+
+#intro.resume-section {
+    display: flex;
+    align-items: center;
+}
+
+.resume-section .social-icons {
+    color: var(--color-fg-mute);
+}
+
+.resume-section.bio {
+    margin-top: 0.5rem;
+}
+
+.resume-section header {
+    @extend .title;
+    font-size: 2rem;
+}
+
+#intro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-bottom: 15px;
+
+    header {
+        margin-top: 0;
+        font-size: 3rem;
+    }
+
+    h4 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .social-icons {
+        text-align: initial;
+    }
+}
+
+#vitals {
+    margin-right: 20px;
+}
+
+.resume-item {
+
+    display: flex;
+    margin-top: 3rem;
+
+    h3 {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        font-size: 1.3rem;
+    }
+
+    .date {
+        display: block;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: var(--color-fg-mute);
+    }
+
+    @media (min-width: 850px) {
+        h3 {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .date {
+            display: initial;
+            margin-top: 0;
+        }
+    }
+
+    .img-wrapper {
+        display: none;
+        flex: 0 0 180px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    @media (min-width: 550px) {
+        .img-wrapper {
+            display: initial;
+        }
+    }
+
+    .resume-img {
+        max-width: 100%;
+        max-height: 120px;
+    }
+
+    .resume-content {
+        flex-grow: 1;
+    }
+}
