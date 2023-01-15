@@ -1,0 +1,25 @@
+[settings]
+  strict = true # stop on error
+  verbose = true
+  debug = false
+
+  site_dir = "src"
+  build_dir = "gen"
+
+  generator_mode = false
+
+  # Set the document type to HTML5, unless the page already has a doctype
+  # declaration.
+  doctype = "<!DOCTYPE html>"
+  keep_doctype = true
+
+  plugin_discovery = true
+  plugin_dirs = ["../plugins"]
+
+[widgets.head]
+  widget = "include"
+  selector = "head"
+  file = "templates/head.html"
+
+[widgets.lang]
+  widget = "lang"
