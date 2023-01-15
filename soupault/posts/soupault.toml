@@ -3,8 +3,8 @@
   verbose = true
   debug = false
 
-  site_dir = "src/posts"
-  build_dir = "gen/posts"
+  site_dir = "src"
+  build_dir = "gen"
 
   # Other extensions are static assets and copied to gen unchanged
   page_file_extensions = ["htm", "html", "md", "rst", "adoc"]
@@ -29,13 +29,13 @@
   clean_urls = true
 
   plugin_discovery = true
-  plugin_dirs = ["plugins"]
+  plugin_dirs = ["../plugins"]
 
 [widgets.head]
   widget = "include"
   selector = "head"
   action = "prepend_child"
-  file = "src/templates/head.html"
+  file = "templates/head.html"
 
 [widgets.title]
   widget = "title"
@@ -70,7 +70,7 @@
 [widgets.social-icons]
   widget = "include"
   selector = "body"
-  file = "src/templates/social-icons.html"
+  file = "templates/social-icons.html"
 
 # [widgets.breadcrumbs]
 #   widget = "breadcrumbs"
