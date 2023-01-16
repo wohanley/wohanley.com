@@ -2,7 +2,6 @@
 
 headlines = HTML.select(page, "h2")
 
-
 local index = 1
 while headlines[index] do
   hl = headlines[index]
