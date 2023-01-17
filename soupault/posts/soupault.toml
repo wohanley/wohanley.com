@@ -3,8 +3,8 @@
   verbose = true
   debug = false
 
-  site_dir = "src"
-  build_dir = "gen"
+  site_dir = "src/"
+  build_dir = "gen/"
 
   # Other extensions are static assets and copied to gen unchanged
   page_file_extensions = ["htm", "html", "md", "rst", "adoc"]
@@ -37,12 +37,18 @@
   action = "prepend_child"
   file = "templates/head.html"
 
-[widgets.title]
+[widgets.post-title]
+  section = "posts/"
   widget = "title"
   append = " ⋮ William O'Hanley"
   default = "William O'Hanley"
   force = true
   keep = true
+
+[widgets.author]
+  widget = "preprocess_element"
+  selector = "author"
+  command = "bb ../scripts/clj/author.clj"
 
 [widgets.footnote]
   widget = "wrap"
@@ -51,6 +57,8 @@
   wrapper_selector = ".footnote__content"
 
 [widgets.toc]
+  section = "posts/"
+
   widget = "toc"
   selector = "#toc"
 
@@ -84,3 +92,32 @@
 # toc does this better
 # [widgets.self-anchor]
 #   widget = "self-anchor"
+
+[index]
+  index = true
+  section = "posts/"
+  leaf_file = ".leaf"
+  index_first = true
+  sort_by = "published"
+  sort_type = "calendar"
+  date_formats = ["%F"]
+  sort_descending = true
+  strict_sort = true
+  dump_json = "cache/index.json"
+
+[index.fields]
+
+[index.fields.id]
+  selector = 'meta[itemprop="identifier"]'
+  extract_attribute = "content"
+
+[index.fields.title]
+  selector = "h1"
+
+[index.fields.published]
+  selector = 'time[itemprop="issued"]'
+  extract_attribute = "datetime"
+
+[index.fields.excerpt]
+  selector = 'meta[itemprop="description"]'
+  extract_attribute = "content"
