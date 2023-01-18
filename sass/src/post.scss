@@ -95,7 +95,8 @@ article header .subtitle :not(:last-child)::after {
   font-weight: bold;
 }
 
-h2, h3, h4, p, pre, ul, ol {
+/* pandoc produces div.sourceCode */
+h2, h3, h4, p, pre, ul, ol, .sourceCode {
   width: calc(100vw - 40px);
 }
 
@@ -110,7 +111,7 @@ h2, h3, h4, p, pre, ul, ol {
     margin: 0 auto;
   }
 
-  h2, h3, h4, p, pre, ul, ol {
+  h2, h3, h4, p, pre, ul, ol, .sourceCode {
     width: 60%;
   }
 }
@@ -118,7 +119,7 @@ h2, h3, h4, p, pre, ul, ol {
 @media (min-width: 1200px) {
   #toc {
     float: left;
-    max-width: var(--toc-width);
+    width: var(--toc-width);
     margin-left: calc(var(--toc-width) * -1 - 30px);
     position: sticky;
     top: 40px;
@@ -205,7 +206,7 @@ ul, ol {
   }
 }
 
-article p:last-of-type::after {
+article p:last-child::after {
   content: " ☼";
   font-family: sans, "fontello";
   font-weight: bold;
@@ -213,7 +214,7 @@ article p:last-of-type::after {
 }
 
 @media (prefers-color-scheme: dark) {
-  article p:last-of-type::after {
+  article p:last-child::after {
     content: " ⏾";
   }
 }
