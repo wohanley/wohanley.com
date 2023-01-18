@@ -35,6 +35,12 @@
   widget = "include"
   selector = "head"
   action = "prepend_child"
+  file = "../templates/head.html"
+
+[widgets.post-head]
+  widget = "include"
+  selector = "head"
+  action = "append_child"
   file = "templates/head.html"
 
 [widgets.post-title]
@@ -47,7 +53,7 @@
 
 [widgets.author]
   widget = "preprocess_element"
-  selector = "author"
+  selector = ".subtitle"
   command = "bb ../scripts/clj/author.clj"
 
 [widgets.footnote]
@@ -66,7 +72,7 @@
   ignore_heading_selectors = ["h1", "#toc h3"]
 
   min_level = 2
-  max_level = 3
+  max_level = 2
 
   # append heading level to class for toc items
   toc_class_levels = true
@@ -85,6 +91,12 @@
 #   selector = "#breadcrumbs"
 #   breadcrumb_template = """<a href="{{url}}">{{name}}</a>"""
 #   between = " / "
+
+[widgets.breadcrumbs]
+  widget = "include"
+  selector = "body"
+  file = "templates/breadcrumbs.html"
+  action = "prepend_child"
 
 [widgets.lang]
   widget = "lang"
