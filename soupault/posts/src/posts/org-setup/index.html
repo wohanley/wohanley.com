@@ -3,20 +3,15 @@
     <link rel="stylesheet" href="/pandoc-highlight-style.css" />
 </head>
 <body>
-    <div id="breadcrumbs">
-        <span class="breadcrumb"><a href="/">home</a></span>
-        <span class="breadcrumb"><a href="/posts/">posts</a></span>
-    </div>
     <article itemscope itemtype="http://schema.org/Article">
         <meta itemprop="identifier" content="tag:wohanley@wohanley.com,2022-11-27:org-setup">
-        <meta itemprop="description" content="My current calendaring, task management, note-taking, and bibliography system.">
+        <meta itemprop="description" content="My current calendaring, task management, note-taking, and bibliography system">
         <header>
             <h1>My current org-mode setup</h1>
             <div class="subtitle">
                 <time itemprop="issued" datetime="2022-11-28">28 November 2022</time>
                 <author>William O'Hanley</author>
             </div>
-            <p><em>28 November 2022</em></p>
         </header>
 
         <section class="main-content">
@@ -25,7 +20,7 @@
             </div>
             <p>I’ve put some work into my org-mode setup in Emacs over the last while, and I’ve recently gotten pretty content with a setup with the following affordances:</p>
             <ul>
-                <li>Low-friction, non-hierarchical note-taking with<code>org-roam</code></li>
+                <li>Low-friction, non-hierarchical note-taking with <code>org-roam</code></li>
                 <li>Plain-text annotation, interlinked with my other notes, of Zotero-managed reference material</li>
                 <li>An <code>org-agenda</code> that pulls events and TODOs from a wide variety of sources, including my notes</li>
                 <li>A flexible inbox that captures anything I can’t deal with immediately, especially emails and web pages</li>
@@ -39,93 +34,91 @@
             <h2 id="org-folder">org folder</h2>
             <p>I have a folder, <code>~/org</code>, that holds most everything I need for my setup. It has this structure:</p>
             <pre><code>~/org
-          ├ gtd
-          │ ├ inbox.org
-          │ ├ next.org
-          │ ├ someday.org
-          │ ├ consume.org
-          │ └ calendars
-          │   ├ personal.org
-          │   ├ stanford-law.org
-          │   └ more calendars...
-          ├ library
-          └ zettelkasten</code></pre>
+  ├ gtd
+  │ ├ inbox.org
+  │ ├ next.org
+  │ ├ someday.org
+  │ ├ read.org
+  │ └ calendars
+  │   ├ personal.org
+  │   ├ stanford-law.org
+  │   └ more calendars...
+  ├ library
+  └ zettelkasten</code></pre>
             <p><code>~/org/gtd</code> holds my main agenda files, <code>~/org/library</code> holds my reference material, and <code>~/org/zettelkasten</code> holds an <code>org-roam</code> Zettelkasten-ish.</p>
             <h2 id="org-agenda">org-agenda</h2>
             <p><img class="section" src="./agenda.png" alt="An Emacs buffer displaying a multi-sectioned org-agenda. At the top is a day view, with sections beneath for in progress and pending tasks." title="My org-agenda" /></p>
-            <p>The thing I use <code>org-mode</code> for most, on a median day, is my agenda. It mostly lives in <code>~/org/gtd</code>, which is so named because of my aspiration to something like a <a href="https://gettingthingsdone.com/what-is-gtd/">GTD</a> methodology similar to <a href="https://blog.jethro.dev/posts/org_mode_workflow_preview/">Jethro Kuan’s</a>. My agenda is built from <code>inbox.org</code>, <code>next.org</code>, <code>someday.org</code>, <code>consume.org</code>, any files in <code>~/org/zettelkasten</code> containing TODO items, and calendars. The code for the non-calendar part looks like this (the calendar bit is below):
-            </p>
+            <p>The thing I use <code>org-mode</code> for most, on a median day, is my agenda. It mostly lives in <code>~/org/gtd</code>, which is so named because of my aspiration to something like a <a href="https://gettingthingsdone.com/what-is-gtd/">GTD</a> methodology.<span class="footnote">Similar to <a href="https://blog.jethro.dev/posts/org_mode_workflow_preview/">Jethro Kuan’s</a>.</span> My agenda is built from <code>inbox.org</code>, <code>next.org</code>, <code>someday.org</code>, <code>read.org</code>, any files in <code>~/org/zettelkasten</code> containing TODO items,<span class="footnote">I was somewhat worried that looking through my entire Zettelkasten for TODOs would be slow, but ripgrep is very, very fast (the search takes about 10 milliseconds).</span> and calendars. The code for the non-calendar part looks like this (the calendar bit is below):</p>
             <div class="sourceCode" id="cb2">
                 <pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> who/org-agenda-directory <span class="st">&quot;~/org/gtd/&quot;</span>)</span>
-        <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-        <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">require</span> &#39;find-lisp)</span>
-        <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">defun</span><span class="fu"> who/find-org-files </span>(<span class="kw">directory</span>)</span>
-        <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    (find-lisp-find-files <span class="kw">directory</span> <span class="st">&quot;\.org$&quot;</span>))</span>
-        <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-        <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">defun</span><span class="fu"> who-org/agenda-files-update </span>(&amp;<span class="kw">rest</span> _)</span>
-        <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">let</span> ((todo-zettels (-&gt;&gt; <span class="st">&quot;rg --files-with-matches &#39;(TODO)|(NEXT)|(HOLD)|(WAITING)&#39; ~/org/zettelkasten&quot;</span></span>
-        <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                            (shell-command-to-string)</span>
-        <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                            (s-lines)</span>
-        <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                            (-filter (<span class="kw">lambda</span> (line) (<span class="kw">not</span> (s-blank? line)))))))</span>
-        <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">setq</span> org-agenda-files (<span class="kw">append</span> (who/find-org-files who/org-agenda-directory)</span>
-        <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                                     todo-zettels))))</span>
-        <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-        <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  (advice-add &#39;org-agenda :before #&#39;who-org/agenda-files-update)</span></code></pre>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">require</span> &#39;find-lisp)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">defun</span><span class="fu"> who/find-org-files </span>(<span class="kw">directory</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    (find-lisp-find-files <span class="kw">directory</span> <span class="st">&quot;\.org$&quot;</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">defun</span><span class="fu"> who-org/agenda-files-update </span>(&amp;<span class="kw">rest</span> _)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">let</span> ((todo-zettels (-&gt;&gt; <span class="st">&quot;rg --files-with-matches &#39;(TODO)|(NEXT)|(HOLD)|(WAITING)&#39; ~/org/zettelkasten&quot;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                            (shell-command-to-string)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                            (s-lines)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                            (-filter (<span class="kw">lambda</span> (line) (<span class="kw">not</span> (s-blank? line)))))))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">setq</span> org-agenda-files (<span class="kw">append</span> (who/find-org-files who/org-agenda-directory)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                                     todo-zettels))))</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  (advice-add &#39;org-agenda :before #&#39;who-org/agenda-files-update)</span></code></pre>
             </div>
-            <p>I was somewhat worried that looking through my entire Zettelkasten for TODOs would be slow, but ripgrep is very, very fast (this operation takes about 10 milliseconds).</p>
             <p>Each of the files in <code>~/org/gtd</code> has a different purpose, mostly emerging from GTD ideas:</p>
             <ul>
-                <li><code>inbox.org</code> is mostly a destination for capture templates, but sometimes I write things into it manually on my phone using <a href="https://github.com/gsantner/markor">Markor</a> (syncing via <a href="https://syncthing.net/">Syncthing</a>). I jot stuff in here so I can stop thinking about it in the moment and come back to it later.</li>
+                <li><code>inbox.org</code> is mostly a destination for capture templates, but sometimes I write things into it manually on my phone<span class="footnote">This does suck a bit. I just enter the bare minimum to jog my memory later.</span> using <a href="https://github.com/gsantner/markor">Markor</a> (syncing via <a href="https://syncthing.net/">Syncthing</a>). I jot stuff in here so I can stop thinking about it in the moment and come back to it later.</li>
                 <li><code>next.org</code> is for stuff that I’m currently working on or ought to start working on soon.</li>
                 <li><code>someday.org</code> is for stuff that I’ll get to whenever I get to it, possibly never.</li>
-                <li><code>consume.org</code> is for media that I intend to consume at some point: books, movies, music, etc.</li>
+                <li><code>read.org</code> is for media that I intend to consume at some point: books, movies, music, etc.</li>
             </ul>
             <p>I capture stuff into <code>inbox.org</code> and eventually refile it into the most appropriate out of the other three, or sometimes into one of my Zettels, using <a href="https://blog.jethro.dev/posts/processing_inbox/">Jethro Kuan’s method</a>. I try to do this pretty often and maintain inbox zero when possible. My capture templates look like this:</p>
             <div class="sourceCode" id="cb3">
                 <pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> org-capture-templates</span>
-        <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>      `((<span class="st">&quot;i&quot;</span> <span class="st">&quot;inbox&quot;</span> entry (file ,(concat who/org-agenda-directory <span class="st">&quot;inbox.org&quot;</span>))</span>
-        <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;* TODO %?</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-        <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        (<span class="st">&quot;a&quot;</span> <span class="st">&quot;appointment&quot;</span> entry (file <span class="st">&quot;~/org/gtd/calendars/personal.org&quot;</span> ))</span>
-        <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        (<span class="st">&quot;e&quot;</span> <span class="st">&quot;email&quot;</span> entry (file+headline ,(concat who/org-agenda-directory <span class="st">&quot;inbox.org&quot;</span>) <span class="st">&quot;Emails&quot;</span>)</span>
-        <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;* TODO [#B] %a&quot;</span> :immediate-finish <span class="kw">t</span>)</span>
-        <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        (<span class="st">&quot;l&quot;</span> <span class="st">&quot;link&quot;</span> entry (file ,(concat who/org-agenda-directory <span class="st">&quot;inbox.org&quot;</span>))</span>
-        <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;* TODO %(org-cliplink-capture)&quot;</span> :immediate-finish <span class="kw">t</span>)</span>
-        <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        (<span class="st">&quot;c&quot;</span> <span class="st">&quot;org-protocol-capture&quot;</span> entry (file ,(concat who/org-agenda-directory <span class="st">&quot;inbox.org&quot;</span>))</span>
-        <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;* TODO [[%:link][%:description]]</span><span class="sc">\n\n</span><span class="st"> %i&quot;</span> :immediate-finish <span class="kw">t</span>)))</span></code></pre>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>      `((<span class="st">&quot;i&quot;</span> <span class="st">&quot;inbox&quot;</span> entry (file ,(concat who/org-agenda-directory <span class="st">&quot;inbox.org&quot;</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;* TODO %?</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        (<span class="st">&quot;a&quot;</span> <span class="st">&quot;appointment&quot;</span> entry (file <span class="st">&quot;~/org/gtd/calendars/personal.org&quot;</span> ))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        (<span class="st">&quot;e&quot;</span> <span class="st">&quot;email&quot;</span> entry (file+headline ,(concat who/org-agenda-directory <span class="st">&quot;inbox.org&quot;</span>) <span class="st">&quot;Emails&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;* TODO [#B] %a&quot;</span> :immediate-finish <span class="kw">t</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        (<span class="st">&quot;l&quot;</span> <span class="st">&quot;link&quot;</span> entry (file ,(concat who/org-agenda-directory <span class="st">&quot;inbox.org&quot;</span>))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;* TODO %(org-cliplink-capture)&quot;</span> :immediate-finish <span class="kw">t</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        (<span class="st">&quot;c&quot;</span> <span class="st">&quot;org-protocol-capture&quot;</span> entry (file ,(concat who/org-agenda-directory <span class="st">&quot;inbox.org&quot;</span>))</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;* TODO [[%:link][%:description]]</span><span class="sc">\n\n</span><span class="st"> %i&quot;</span> :immediate-finish <span class="kw">t</span>)))</span></code></pre>
             </div>
-            <p>The two of these I use most are “org-protocol-capture”, for collecting links to websites I have open in my browser, and also “email”. I use <a href="https://notmuchmail.org/"><code>notmuch</code></a> for email, and I have a keybinding that lets me trigger the “email” template while looking at an email there by pressing <code>c</code>. If an email is going to take a while to answer, I capture it to get it out of my relatively unmanageable email inbox and into Org. “org-protocol-capture” works in conjunction with <a href="https://github.com/alphapapa/org-protocol-capture-html">alphapapa’s nice bookmarklet</a>. I use it when I’m feeling overwhelmed by tabs in Firefox and I want to close some of them while remembering they exist.</p>
+            <p>The two of these I use most are <code>"org-protocol-capture"</code>, for collecting links to websites I have open in my browser, and also <code>"email"</code>. I use <a href="https://notmuchmail.org/"><code>notmuch</code></a> for email, and I have a keybinding that lets me trigger the <code>"email"</code> template from there by pressing <code>c</code>. If an email is going to take a while to answer, I capture it to get it out of my relatively unmanageable email inbox and into Org. <code>"org-protocol-capture"</code> works in conjunction with <a href="https://github.com/alphapapa/org-protocol-capture-html">alphapapa’s nice bookmarklet</a>. I use it when I’m feeling overwhelmed by tabs in Firefox and I want to close some of them while remembering they exist.</p>
             <p>I also have some habits I track with <code>org-habit</code>. As the screenshot shows I was a bit overambitious in terms of how many habits I thought I could keep up.</p>
             <p>Lastly, I added a custom alert style for <a href="https://github.com/akhramov/org-wild-notifier.el"><code>org-wild-notifier</code></a> agenda alerts to make them stay visible until I explicitly dismiss them (I’m often not looking at my screen).</p>
             <div class="sourceCode" id="cb4">
                 <pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(alert-define-style &#39;who/alert-style-reminder</span>
-        <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                    :title <span class="st">&quot;Agenda reminders&quot;</span></span>
-        <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                    :notifier (<span class="kw">lambda</span> (info)</span>
-        <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                                (alert-libnotify-notify (plist-put info :persistent <span class="kw">t</span>))))</span>
-        <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-        <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>(add-to-list &#39;alert-user-configuration</span>
-        <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>             &#39;(((:title . <span class="st">&quot;Agenda&quot;</span>))</span>
-        <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>               who/alert-style-reminder))</span></code></pre>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                    :title <span class="st">&quot;Agenda reminders&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                    :notifier (<span class="kw">lambda</span> (info)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                                (alert-libnotify-notify (plist-put info :persistent <span class="kw">t</span>))))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>(add-to-list &#39;alert-user-configuration</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>             &#39;(((:title . <span class="st">&quot;Agenda&quot;</span>))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>               who/alert-style-reminder))</span></code></pre>
             </div>
-            <p>n.b. This relies on <code>org-wild-notifier-notification-title</code> having its default value, “Agenda”.</p>
+            <p>n.b. This relies on <code>org-wild-notifier-notification-title</code> having its default value, <code>"Agenda"</code>.</p>
             <h3 id="google">Aside: Calendars and Google sync</a></h3>
             <p>The files under <code>~/org/gtd/calendars</code> reflect various Google calendars that I sync with. I use <a href="https://github.com/myuhe/org-gcal.el"><code>org-gcal</code></a> for that as follows:</p>
             <div class="sourceCode" id="cb5">
                 <pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> who/get-file-contents </span>(filename)</span>
-        <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Return the contents of FILENAME.&quot;</span></span>
-        <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  (with-temp-buffer</span>
-        <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    (insert-file-contents filename)</span>
-        <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    (buffer-string)))</span>
-        <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-        <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>(<span class="kw">use-package</span> org-gcal</span>
-        <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  :after org</span>
-        <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  :commands (org-gcal-request-token)</span>
-        <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  :config</span>
-        <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">setq</span> org-gcal-token-file <span class="st">&quot;~/.config/org-gcal/.org-gcal-token&quot;</span></span>
-        <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        org-gcal-client-id (who/get-file-contents <span class="st">&quot;~/.config/org-gcal/.org-gcal-client-id&quot;</span>)</span>
-        <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        org-gcal-client-secret (who/get-file-contents <span class="st">&quot;~/.config/org-gcal/.org-gcal-client-secret&quot;</span>)</span>
-        <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        org-gcal-fetch-file-alist &#39;((<span class="st">&quot;email_obfuscated@gmail.com&quot;</span> . <span class="st">&quot;~/org/gtd/calendars/personal.org&quot;</span>)</span>
-        <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                                    (<span class="st">&quot;email_obfuscated@law.stanford.edu&quot;</span> . <span class="st">&quot;~/org/gtd/calendars/stanford-law.org&quot;</span>))</span>
-        <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        org-gcal-local-timezone <span class="st">&quot;Canada/Pacific&quot;</span>))</span></code></pre>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Return the contents of FILENAME.&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  (with-temp-buffer</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    (insert-file-contents filename)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    (buffer-string)))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>(<span class="kw">use-package</span> org-gcal</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  :after org</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  :commands (org-gcal-request-token)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  :config</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">setq</span> org-gcal-token-file <span class="st">&quot;~/.config/org-gcal/.org-gcal-token&quot;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        org-gcal-client-id (who/get-file-contents <span class="st">&quot;~/.config/org-gcal/.org-gcal-client-id&quot;</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        org-gcal-client-secret (who/get-file-contents <span class="st">&quot;~/.config/org-gcal/.org-gcal-client-secret&quot;</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        org-gcal-fetch-file-alist &#39;((<span class="st">&quot;email_obfuscated@gmail.com&quot;</span> . <span class="st">&quot;~/org/gtd/calendars/personal.org&quot;</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                                    (<span class="st">&quot;email_obfuscated@law.stanford.edu&quot;</span> . <span class="st">&quot;~/org/gtd/calendars/stanford-law.org&quot;</span>))</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        org-gcal-local-timezone <span class="st">&quot;Canada/Pacific&quot;</span>))</span></code></pre>
             </div>
             <p>Getting Google sync stuff working in general has been a nightmare, especially wrt Gmail. Eventually I got that working using <a href="https://github.com/google/oauth2l"><code>oauth2l</code></a> plus a locally-built copy of <a href="https://sourceforge.net/p/isync/isync/ci/master/tree/"><code>isync</code></a>, which I still have to rebuild manually when there’s an update for it to get it to notice the XOAUTH2 SASL plugin. I handle most of that stuff with Nix via <a href="https://github.com/nix-community/home-manager"><code>home-manager</code></a> (see my <a href="https://gitlab.com/whohanley/dotfiles/-/blob/master/penguin/home-manager/.config/nixpkgs/home.nix"><code>home.nix</code></a>). It isn’t strictly Org-related, but getting email working was key to the GTD inbox concept working at all.</p>
             <h2 id="library">Library</h2>
@@ -138,7 +131,7 @@
                 really care.</p>
             <p>When I capture something with Zotero (usually via the Zotero browser
                 extension), it goes in this folder and Zotero makes an entry linking to
-                it. I use the ZotFile plugin to accomplish this. I also have a lot of
+                it.<span class="footnote">Via the <a href="http://zotfile.com/">ZotFile</a> plugin.</span> I also have a lot of
                 stuff that I just download from somewhere and dump in here. Usually I
                 link to it somehow, from a Zettel or something, so it’s not just adding
                 to the trash heap (I hope).</p>
@@ -156,9 +149,9 @@
             </p>
             <div class="sourceCode" id="cb6">
                 <pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(notdeft :variables</span>
-        <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>         notdeft-directories &#39;(<span class="st">&quot;~/org/zettelkasten&quot;</span>)</span>
-        <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>         <span class="co">;; Ignore property drawers at the start of files (as created by org-roam)</span></span>
-        <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>         notdeft-allow-org-property-drawers <span class="kw">t</span>)</span></code></pre>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>         notdeft-directories &#39;(<span class="st">&quot;~/org/zettelkasten&quot;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>         <span class="co">;; Ignore property drawers at the start of files (as created by org-roam)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>         notdeft-allow-org-property-drawers <span class="kw">t</span>)</span></code></pre>
             </div>
             <p>Other than that, I haven’t made a ton of customizations to <code>org-roam</code> because it honestly just works pretty well.
             </p>
@@ -180,9 +173,9 @@
             </p>
             <div class="sourceCode" id="cb7">
                 <pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> bibtex-completion-bibliography &#39;(<span class="st">&quot;~/org/master.bib&quot;</span>))</span>
-        <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> bibtex-completion-pdf-field <span class="st">&quot;file&quot;</span>)</span>
-        <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> bibtex-completion-notes-path org-roam-directory)</span>
-        <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> orb-roam-ref-format &#39;org-cite)</span></code></pre>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> bibtex-completion-pdf-field <span class="st">&quot;file&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> bibtex-completion-notes-path org-roam-directory)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> orb-roam-ref-format &#39;org-cite)</span></code></pre>
             </div>
             <p>Now <code>helm-bibtex</code> knows where to look for my bibliography.
                 When I select an entry via <code>helm-bibtex</code> that doesn’t have an
@@ -206,33 +199,31 @@
                 BibTeX stuff:</p>
             <div class="sourceCode" id="cb9">
                 <pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> who/mtime </span>(file) (<span class="kw">let</span> ((attrs (file-attributes file))) (<span class="kw">nth</span> <span class="dv">5</span> attrs)))</span>
-        <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-        <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> who/latest-file </span>(path)</span>
-        <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> ((e (f-entries path)))</span>
-        <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">car</span> (<span class="kw">sort</span> e (<span class="kw">lambda</span> (a b)</span>
-        <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                   (<span class="kw">not</span> (time-less-p (who/mtime a)</span>
-        <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                                     (who/mtime b))))))))</span>
-        <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-        <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> who/org-noter-latest </span>()</span>
-        <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-        <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  (save-excursion</span>
-        <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    (search-backward <span class="st">&quot;#+title&quot;</span>)</span>
-        <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    (move-end-of-line <span class="kw">nil</span>)</span>
-        <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    (insert <span class="st">&quot;</span><span class="sc">\n</span><span class="st">#+roam_tags: bib&quot;</span>))</span>
-        <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  (insert <span class="st">&quot;* Notes</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-        <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let*</span> ((file (who/latest-file <span class="st">&quot;~/org/library&quot;</span>))</span>
-        <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        (relative-file (file-relative-name file <span class="st">&quot;~/org/zettelkasten&quot;</span>)))</span>
-        <span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    (org-set-property <span class="st">&quot;NOTER_DOCUMENT&quot;</span> relative-file)</span>
-        <span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    (org-noter)))</span></code></pre>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> who/latest-file </span>(path)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> ((e (f-entries path)))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">car</span> (<span class="kw">sort</span> e (<span class="kw">lambda</span> (a b)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                   (<span class="kw">not</span> (time-less-p (who/mtime a)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                                     (who/mtime b))))))))</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> who/org-noter-latest </span>()</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  (save-excursion</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    (search-backward <span class="st">&quot;#+title&quot;</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    (move-end-of-line <span class="kw">nil</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    (insert <span class="st">&quot;</span><span class="sc">\n</span><span class="st">#+roam_tags: bib&quot;</span>))</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  (insert <span class="st">&quot;* Notes</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let*</span> ((file (who/latest-file <span class="st">&quot;~/org/library&quot;</span>))</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        (relative-file (file-relative-name file <span class="st">&quot;~/org/zettelkasten&quot;</span>)))</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    (org-set-property <span class="st">&quot;NOTER_DOCUMENT&quot;</span> relative-file)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    (org-noter)))</span></code></pre>
             </div>
             <p>This gives me a pretty smooth two-step of “click Save to Zotero in
                 browser (or download something manually) → create note in Emacs”.</p>
             <h2 id="conclusion">Conclusion</h2>
             <p>Getting this stuff working has been both very difficult and very
                 valuable for me, and I hope my meagre notes are of use to someone trying
-                to run something similar. If you’re having trouble getting some of this
-                code working, feel free to send me an email. If this workflow seems
-                useful to you, you may want to look at some of the work that inspired it
+                to run something similar. You may also want to look at some of the work that inspired it
                 (including a lot of directly stolen code):</p>
             <ul>
                 <li><a href="https://blog.jethro.dev/posts/org_mode_workflow_preview/">Jethro
@@ -242,6 +233,7 @@
                 <li><a href="https://beepb00p.xyz/annotating.html">karlicoss’s guide to
                         annotation</a></li>
             </ul>
+            <p>If you’re having trouble with any of this, feel free to send me an email.</p>
         </section>
     </article>
 
