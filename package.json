@@ -1,0 +1,9 @@
+{
+  "name": "wohanley.com",
+  "scripts": {
+    "build:sass": "sass ./sass/src/:./sass/out"
+  },
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
+}

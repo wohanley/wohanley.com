@@ -1,3 +1,4 @@
+node_modules/
 .lsp/
 .cpcache/
 .clj-kondo/
