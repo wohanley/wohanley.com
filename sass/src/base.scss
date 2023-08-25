@@ -7,10 +7,10 @@
 @import 'pandoc-highlight';
 
 @mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
 }
 
 
@@ -33,48 +33,48 @@ p + ul, p + ol {
 
 
 :root {
-    --color-bg: #fffbf0;
-    --color-fg: #232629;
-    --color-fg-mute: #42474D;
-    --color-accent-hard: #de2147;
-    --color-accent-soft: #369683;
+  --color-bg: #fffbf0;
+  --color-fg: #232629;
+  --color-fg-mute: #42474D;
+  --color-accent-hard: #de2147;
+  --color-accent-soft: #369683;
 
-    --font-serif: "Iowan Old Style", "Baskerville", "Georgia", "serif";
-    --font-sans: "Alegreya Sans", "sans";
-    --font-mono: "Iosevka Web", "Monaco", "monospace";
-    --font-title: var(--font-sans);
-    --font-body: var(--font-sans);
+  --font-serif: "Iowan Old Style", "Baskerville", "Georgia", "serif";
+  --font-sans: "Alegreya Sans", "sans";
+  --font-mono: "Iosevka Web", "Monaco", "monospace";
+  --font-title: var(--font-sans);
+  --font-body: var(--font-sans);
 
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --color-bg: #232629;
-        --color-fg: #fffbf0;
-        --color-fg-mute: #e0dcd1;
-        --color-accent-hard: #6ef7dc;
-        --color-accent-soft: #ff6685;
-    }
+  :root {
+    --color-bg: #232629;
+    --color-fg: #fffbf0;
+    --color-fg-mute: #e0dcd1;
+    --color-accent-hard: #6ef7dc;
+    --color-accent-soft: #ff6685;
+  }
 }
 
 ::selection {
-    background-color: var(--color-accent-hard);
-    color: var(--color-bg);
+  background-color: var(--color-accent-hard);
+  color: var(--color-bg);
 }
 
 body {
-    margin: 0;
-    padding: 0 10px 30px 10px;
-    font-family: var(--font-body);
-    background-color: var(--color-bg);
-    color: var(--color-fg);
+  margin: 0;
+  padding: 0 10px 30px 10px;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
 }
 
 @media (min-width: 768px) {
-    body {
-        padding: 0 0 30px 40px;
-    }
+  body {
+    padding: 0 0 30px 40px;
+  }
 }
 
 pre, code {
@@ -83,28 +83,28 @@ pre, code {
 }
 
 a {
-    color: unset;
-    font-style: italic;
+  color: unset;
+  font-style: italic;
 }
 
 a:focus, a:hover {
-    color: var(--color-accent-soft);
+  color: var(--color-accent-soft);
 }
 
 a:active {
-    color: var(--color-accent-hard);
+  color: var(--color-accent-hard);
 }
 
 a svg {
-    fill: var(--color-fg);
+  fill: var(--color-fg);
 }
 
 a:focus svg, a:hover svg {
-    fill: var(--color-accent-soft);
+  fill: var(--color-accent-soft);
 }
 
 a:active svg {
-    color: var(--color-accent-hard);
+  color: var(--color-accent-hard);
 }
 
 @media print {
@@ -148,56 +148,56 @@ h6:target {
 }
 
 .title {
-    font-weight: bold;
-    color: var(--color-accent-hard);
+  font-weight: bold;
+  color: var(--color-accent-hard);
 }
 
 #breadcrumbs {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .container {
-    max-width: 1100px;
-    margin: 0 auto;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .section {
-    margin-top: $section-margin-top;
-    max-width: 100%;
+  margin-top: $section-margin-top;
+  max-width: 100%;
 }
 
 .social-icons {
-    font-size: 2.5rem;
-    margin-top: 2.5rem;
-    text-align: center;
+  font-size: 2.5rem;
+  margin-top: 2.5rem;
+  text-align: center;
 
-    /* muted colors for links */
+  /* muted colors for links */
 
-    a {
-      color: var(--color-fg-mute);
-    }
+  a {
+    color: var(--color-fg-mute);
+  }
 
-    a svg {
-      fill: var(--color-fg-mute);
-    }
+  a svg {
+    fill: var(--color-fg-mute);
+  }
 
-    /* repeat focus/hover/active styles to prevent override by nested plain style */
+  /* repeat focus/hover/active styles to prevent override by nested plain style */
 
-    a:focus, a:hover {
-      color: var(--color-accent-soft);
-    }
+  a:focus, a:hover {
+    color: var(--color-accent-soft);
+  }
 
-    a:active {
-      color: var(--color-accent-hard);
-    }
+  a:active {
+    color: var(--color-accent-hard);
+  }
 
-    a:focus svg, a:hover svg {
-      fill: var(--color-accent-soft);
-    }
+  a:focus svg, a:hover svg {
+    fill: var(--color-accent-soft);
+  }
 
-    a:active svg {
-      color: var(--color-accent-hard);
-    }
+  a:active svg {
+    color: var(--color-accent-hard);
+  }
 }
 
 svg.arena-logo {
@@ -208,29 +208,29 @@ svg.arena-logo {
 // Make-based SSG and Mynt produce breadcrumbs slightly differently
 
 .breadcrumb {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .breadcrumb::after {
-    content: "›";
-    font-style: normal;
-    padding: 0 6px 0 10px;
+  content: "›";
+  font-style: normal;
+  padding: 0 6px 0 10px;
 }
 
 .breadcrumb:last-child::after {
-    content: none;
-    padding: 0;
+  content: none;
+  padding: 0;
 }
 
 #breadcrumbs > span:after {
-    content: "›";
-    font-style: normal;
-    padding: 0 6px 0 10px;
+  content: "›";
+  font-style: normal;
+  padding: 0 6px 0 10px;
 }
 
 #breadcrumbs > span:last-child:after {
-    content: none;
-    padding: 0;
+  content: none;
+  padding: 0;
 }
 
 
@@ -254,17 +254,17 @@ $gallery-link-size: 170px;
 $gallery-link-border-radius: 6px;
 
 #gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
 .gallery-link {
-    height: $gallery-link-size;
-    width: $gallery-link-size;
-    background-size: $gallery-link-size $gallery-link-size;
-    @include border-radius($gallery-link-border-radius);
+  height: $gallery-link-size;
+  width: $gallery-link-size;
+  background-size: $gallery-link-size $gallery-link-size;
+  @include border-radius($gallery-link-border-radius);
 }
 
 #willopedia-gallery {
@@ -303,202 +303,202 @@ $gallery-link-border-radius: 6px;
 }
 
 #elm-of-life-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/life.gif');
+  @extend .gallery-link;
+  background-image: url('/assets/images/life.gif');
 }
 
 #stegasaurus-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/asteroids-steg.png');
+  @extend .gallery-link;
+  background-image: url('/assets/images/asteroids-steg.png');
 }
 
 #elevators-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/elevators.gif');
+  @extend .gallery-link;
+  background-image: url('/assets/images/elevators.gif');
 }
 
 #tears-gallery {
-    @extend .gallery-link;
-    position: relative;
+  @extend .gallery-link;
+  position: relative;
 
-    #background, #foreground {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: $gallery-link-size;
-        width: $gallery-link-size;
-        @include border-radius($gallery-link-border-radius)
-    }
+  #background, #foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $gallery-link-size;
+    width: $gallery-link-size;
+    @include border-radius($gallery-link-border-radius)
+  }
 }
 
 #transcat-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/transcat.png');
+  @extend .gallery-link;
+  background-image: url('/assets/images/transcat.png');
 }
 
 #oracle-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/fortune.jpeg');
+  @extend .gallery-link;
+  background-image: url('/assets/images/fortune.jpeg');
 }
 
 #very-smart-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/golfin.jpg');
+  @extend .gallery-link;
+  background-image: url('/assets/images/golfin.jpg');
 }
 
 #wiki-mapper-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/wall-map.png')
+  @extend .gallery-link;
+  background-image: url('/assets/images/wall-map.png')
 }
 
 #dance-bot-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/dance-bot.png')
+  @extend .gallery-link;
+  background-image: url('/assets/images/dance-bot.png')
 }
 
 #tswift-tunes-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/tswift.jpg')
+  @extend .gallery-link;
+  background-image: url('/assets/images/tswift.jpg')
 }
 
 #beepbeep-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/response.png')
+  @extend .gallery-link;
+  background-image: url('/assets/images/response.png')
 }
 
 #vigil-gallery {
-    @extend .gallery-link;
-    background-image: url('/assets/images/vigil.png')
+  @extend .gallery-link;
+  background-image: url('/assets/images/vigil.png')
 }
 
 
 #small-worlds-screenshot {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fomus {
-    margin-top: 4em;
+  margin-top: 4em;
 }
 
 .content-header {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 pre.prose {
-    color: var(--color-fg);
-    background-color: var(--color-bg);
-    border: none;
-    margin: 0;
-    padding: 0;
-    font-size: 1em;
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
 }
 
 .book-title {
-    font-style: italic;
+  font-style: italic;
 }
 
 .resume-section {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 #intro.resume-section {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .resume-section .social-icons {
-    color: var(--color-fg-mute);
+  color: var(--color-fg-mute);
 }
 
 .resume-section.bio {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .resume-section header {
-    @extend .title;
-    font-size: 2rem;
+  @extend .title;
+  font-size: 2rem;
 }
 
 #intro {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 2rem;
-    margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 2rem;
+  margin-bottom: 15px;
 
-    header {
-        margin-top: 0;
-        font-size: 3rem;
-    }
+  header {
+    margin-top: 0;
+    font-size: 3rem;
+  }
 
-    h4 {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
+  h4 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 
-    .social-icons {
-        text-align: initial;
-    }
+  .social-icons {
+    text-align: initial;
+  }
 }
 
 #vitals {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .resume-item {
 
-    display: flex;
-    margin-top: 3rem;
+  display: flex;
+  margin-top: 3rem;
 
+  h3 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    font-size: 1.3rem;
+  }
+
+  .date {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--color-fg-mute);
+  }
+
+  @media (min-width: 850px) {
     h3 {
-        display: flex;
-        flex-direction: column;
-        margin-top: 0;
-        font-size: 1.3rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
     }
 
     .date {
-        display: block;
-        margin-top: 10px;
-        font-size: 1rem;
-        color: var(--color-fg-mute);
+      display: initial;
+      margin-top: 0;
     }
+  }
 
-    @media (min-width: 850px) {
-        h3 {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: baseline;
-        }
+  .img-wrapper {
+    display: none;
+    flex: 0 0 180px;
+    padding: 0 20px;
+    text-align: center;
+  }
 
-        .date {
-            display: initial;
-            margin-top: 0;
-        }
-    }
-
+  @media (min-width: 550px) {
     .img-wrapper {
-        display: none;
-        flex: 0 0 180px;
-        padding: 0 20px;
-        text-align: center;
+      display: initial;
     }
+  }
 
-    @media (min-width: 550px) {
-        .img-wrapper {
-            display: initial;
-        }
-    }
+  .resume-img {
+    max-width: 100%;
+    max-height: 120px;
+  }
 
-    .resume-img {
-        max-width: 100%;
-        max-height: 120px;
-    }
-
-    .resume-content {
-        flex-grow: 1;
-    }
+  .resume-content {
+    flex-grow: 1;
+  }
 }
