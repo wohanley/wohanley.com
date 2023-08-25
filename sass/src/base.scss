@@ -39,12 +39,16 @@ p + ul, p + ol {
   --color-accent-hard: #de2147;
   --color-accent-soft: #369683;
 
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+
   --font-serif: "Iowan Old Style", "Baskerville", "Georgia", "serif";
   --font-sans: "Alegreya Sans", "sans";
   --font-mono: "Iosevka Web", "Monaco", "monospace";
   --font-title: var(--font-sans);
   --font-body: var(--font-sans);
 
+  font-family: var(--font-body);
   line-height: 1.5;
 }
 
@@ -63,12 +67,14 @@ p + ul, p + ol {
   color: var(--color-bg);
 }
 
+html {
+  height: 100%;
+  display: flex;
+}
+
 body {
   margin: 0;
   padding: 0 10px 30px 10px;
-  font-family: var(--font-body);
-  background-color: var(--color-bg);
-  color: var(--color-fg);
 }
 
 @media (min-width: 768px) {
@@ -152,10 +158,6 @@ h6:target {
   color: var(--color-accent-hard);
 }
 
-#breadcrumbs {
-  font-size: 0.9rem;
-}
-
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -207,6 +209,18 @@ svg.arena-logo {
 
 // Make-based SSG and Mynt produce breadcrumbs slightly differently
 
+#breadcrumbs {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media(min-width: 768px) {
+  #breadcrumbs {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
 .breadcrumb {
   font-size: 0.9rem;
 }
@@ -249,134 +263,6 @@ svg.arena-logo {
   }
 }
 
-
-$gallery-link-size: 170px;
-$gallery-link-border-radius: 6px;
-
-#gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.gallery-link {
-  height: $gallery-link-size;
-  width: $gallery-link-size;
-  background-size: $gallery-link-size $gallery-link-size;
-  @include border-radius($gallery-link-border-radius);
-}
-
-#willopedia-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/gallery-willopedia.png');
-}
-
-#org-setup-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/gallery-graph.png');
-}
-
-#document-automation-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/document-automation.png');
-}
-
-#personality-test-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/personality-test.jpg');
-}
-
-#court-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/court.jpg');
-}
-
-#arrest-powers-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/arrest-powers.jpg');
-}
-
-#law-outlines-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/law-outlines.jpg');
-}
-
-#elm-of-life-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/life.gif');
-}
-
-#stegasaurus-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/asteroids-steg.png');
-}
-
-#elevators-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/elevators.gif');
-}
-
-#tears-gallery {
-  @extend .gallery-link;
-  position: relative;
-
-  #background, #foreground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: $gallery-link-size;
-    width: $gallery-link-size;
-    @include border-radius($gallery-link-border-radius)
-  }
-}
-
-#transcat-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/transcat.png');
-}
-
-#oracle-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/fortune.jpeg');
-}
-
-#very-smart-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/golfin.jpg');
-}
-
-#wiki-mapper-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/wall-map.png')
-}
-
-#dance-bot-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/dance-bot.png')
-}
-
-#tswift-tunes-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/tswift.jpg')
-}
-
-#beepbeep-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/response.png')
-}
-
-#vigil-gallery {
-  @extend .gallery-link;
-  background-image: url('/assets/images/vigil.png')
-}
-
-
-#small-worlds-screenshot {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .fomus {
   margin-top: 4em;
