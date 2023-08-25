@@ -4,7 +4,7 @@
    [babashka.pods :as pods]
    [cheshire.core :as json]))
 
-(pods/load-pod "bootleg")
+(pods/load-pod 'retrogradeorbit/bootleg "0.1.9")
 (require '[pod.retrogradeorbit.bootleg.utils :as bl])
 
 (def options

@@ -52,19 +52,19 @@
             <div class="sourceCode" id="cb2">
                 <pre class="sourceCode commonlisp"><code class="sourceCode commonlisp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">setq</span> who/org-agenda-directory <span class="st">&quot;~/org/gtd/&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">require</span> &#39;find-lisp)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">defun</span><span class="fu"> who/find-org-files </span>(<span class="kw">directory</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    (find-lisp-find-files <span class="kw">directory</span> <span class="st">&quot;\.org$&quot;</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> &#39;find-lisp)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> who/find-org-files </span>(<span class="kw">directory</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  (find-lisp-find-files <span class="kw">directory</span> <span class="st">&quot;\.org$&quot;</span>))</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">defun</span><span class="fu"> who-org/agenda-files-update </span>(&amp;<span class="kw">rest</span> _)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">let</span> ((todo-zettels (-&gt;&gt; <span class="st">&quot;rg --files-with-matches &#39;(TODO)|(NEXT)|(HOLD)|(WAITING)&#39; ~/org/zettelkasten&quot;</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                            (shell-command-to-string)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                            (s-lines)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                            (-filter (<span class="kw">lambda</span> (line) (<span class="kw">not</span> (s-blank? line)))))))</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">setq</span> org-agenda-files (<span class="kw">append</span> (who/find-org-files who/org-agenda-directory)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                                     todo-zettels))))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> who-org/agenda-files-update </span>(&amp;<span class="kw">rest</span> _)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> ((todo-zettels (-&gt;&gt; <span class="st">&quot;rg --files-with-matches &#39;(TODO)|(NEXT)|(HOLD)|(WAITING)&#39; ~/org/zettelkasten&quot;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                          (shell-command-to-string)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                          (s-lines)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                          (-filter (<span class="kw">lambda</span> (line) (<span class="kw">not</span> (s-blank? line)))))))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">setq</span> org-agenda-files (<span class="kw">append</span> (who/find-org-files who/org-agenda-directory)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                                   todo-zettels))))</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  (advice-add &#39;org-agenda :before #&#39;who-org/agenda-files-update)</span></code></pre>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>(advice-add &#39;org-agenda :before #&#39;who-org/agenda-files-update)</span></code></pre>
             </div>
             <p>Each of the files in <code>~/org/gtd</code> has a different purpose, mostly emerging from GTD ideas:</p>
             <ul>

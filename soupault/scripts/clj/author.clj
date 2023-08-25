@@ -3,7 +3,7 @@
    [babashka.pods :as pods]
    [clojure.zip :as zip]))
 
-(pods/load-pod "bootleg")
+(pods/load-pod 'retrogradeorbit/bootleg "0.1.9")
 (require '[pod.retrogradeorbit.bootleg.utils :as bl])
 (require '[pod.retrogradeorbit.hickory.zip :as hkz])
 
