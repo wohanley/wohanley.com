@@ -182,11 +182,20 @@ a {
   font-style: italic;
 }
 
-a:focus, a:hover {
+.text-clickable {
+  font-style: italic;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:focus,
+a:hover,
+.text-clickable:focus,
+.text-clickable:hover {
   color: var(--color-accent-soft);
 }
 
-a:active {
+a:active, .text-clickable:active {
   color: var(--color-accent-hard);
 }
 
