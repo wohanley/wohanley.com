@@ -37,6 +37,12 @@
   action = "prepend_child"
   file = "templates/head.html"
 
+[widgets.nav]
+  widget = "include"
+  selector = "header.nav-header"
+  action = "replace_element"
+  file = "templates/nav.html"
+
 [widgets.post-head]
   section = "posts/"
   widget = "include"
