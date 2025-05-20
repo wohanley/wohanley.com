@@ -119,7 +119,6 @@
   index = true
   section = "posts/"
   leaf_file = ".leaf"
-  index_first = true
   sort_by = "published"
   sort_type = "calendar"
   date_formats = ["%F"]
